@@ -60,7 +60,7 @@ public extension UIColor {
     }
     
     func blendColor(aColor: UIColor, ratio: CGFloat = 0.5) -> UIColor {
-        let mainRatio = ratio
+        let mainRatio = 1 - ratio
         let red = self.red * mainRatio + aColor.red * ratio
         let green = self.green * mainRatio + aColor.green * ratio
         let blue = self.blue * mainRatio + aColor.blue * ratio
@@ -107,12 +107,9 @@ public extension UIColor {
     }
     
     convenience init(hexString: String) {
-        var rgbInt: UInt64 = 0
+        var hex: UInt32 = 0
         let trimHex = hexString.stringByReplacingOccurrencesOfString("[^0-9a-fA-F]", withString: "", options: .RegularExpressionSearch)
-        NSScanner(string: trimHex).scanHexLongLong(&rgbInt)
-        let red = CGFloat((rgbInt & 0xFF0000) >> 16)/255.0
-        let green = CGFloat((rgbInt & 0x00FF00) >> 8)/255.0
-        let blue = CGFloat(rgbInt & 0x0000FF)/255.0
-        self.init(red: red, green: green, blue: blue, alpha: 1.0)
+        NSScanner(string: trimHex).scanHexInt(&hex)
+        self.init(hex6: hex, alpha: 1)
     }
 }
