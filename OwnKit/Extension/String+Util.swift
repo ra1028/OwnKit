@@ -6,8 +6,6 @@
 //
 //
 
-import Foundation
-
 public extension String {
     var removeSpace: String {
         return stringByReplacingOccurrencesOfString("( |\n)", withString: "", options: .RegularExpressionSearch)

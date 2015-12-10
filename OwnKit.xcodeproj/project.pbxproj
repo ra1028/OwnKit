@@ -14,6 +14,7 @@
 		2A71E3711C13AEFF00EBF954 /* UIView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A71E36A1C13AEFF00EBF954 /* UIView+Util.swift */; };
 		2A71E3721C13AEFF00EBF954 /* UIViewController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A71E36B1C13AEFF00EBF954 /* UIViewController+Util.swift */; };
 		2A71E3731C13AEFF00EBF954 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A71E36D1C13AEFF00EBF954 /* Util.swift */; };
+		2ACC3C461C194DF300F6EB6F /* UIColor+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC3C451C194DF300F6EB6F /* UIColor+Util.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		2A71E36A1C13AEFF00EBF954 /* UIView+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Util.swift"; sourceTree = "<group>"; };
 		2A71E36B1C13AEFF00EBF954 /* UIViewController+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Util.swift"; sourceTree = "<group>"; };
 		2A71E36D1C13AEFF00EBF954 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		2ACC3C451C194DF300F6EB6F /* UIColor+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Util.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				2A71E3691C13AEFF00EBF954 /* UIStoryboard+Util.swift */,
 				2A71E36A1C13AEFF00EBF954 /* UIView+Util.swift */,
 				2A71E36B1C13AEFF00EBF954 /* UIViewController+Util.swift */,
+				2ACC3C451C194DF300F6EB6F /* UIColor+Util.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				2A71E3731C13AEFF00EBF954 /* Util.swift in Sources */,
 				2A71E36E1C13AEFF00EBF954 /* String+Util.swift in Sources */,
 				2A71E3701C13AEFF00EBF954 /* UIStoryboard+Util.swift in Sources */,
+				2ACC3C461C194DF300F6EB6F /* UIColor+Util.swift in Sources */,
 				2A71E3711C13AEFF00EBF954 /* UIView+Util.swift in Sources */,
 				2A71E36F1C13AEFF00EBF954 /* UINib+Util.swift in Sources */,
 			);
@@ -319,6 +323,7 @@
 				2A71E3651C13AEE900EBF954 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
