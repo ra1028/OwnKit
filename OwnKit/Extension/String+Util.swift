@@ -7,20 +7,65 @@
 //
 
 public extension String {
-    var removeSpace: String {
-        return stringByReplacingOccurrencesOfString("( |\n)", withString: "", options: .RegularExpressionSearch)
+    var length: Int {
+        return characters.count
     }
     
-    var trimSpace: String {
+    var isNotEmpty: Bool {
+        return !isEmpty
+    }
+    
+    func range(fromIndex: Int? = nil, toIndex: Int? = nil) -> Range<Index> {
+        switch (fromIndex, toIndex) {
+        case (let fromIndex?, let toIndex?):
+            return startIndex.advancedBy(fromIndex)..<startIndex.advancedBy(toIndex)
+        case (let fromIndex?, .None):
+            return startIndex.advancedBy(fromIndex)..<endIndex
+        case (.None, let toIndex?):
+            return startIndex..<startIndex.advancedBy(toIndex)
+        case (.None, .None):
+            return startIndex..<endIndex
+        }
+    }
+    
+    func removeSpace() -> String {
+        return removeRegex("( |\n)")
+    }
+    
+    func trimSpace() -> String {
         return stringByTrimmingCharactersInSet(.whitespaceAndNewlineCharacterSet())
+    }
+    
+    func replace(target: String, toString: String, range: Range<Int>? = nil) -> String {
+        return stringByReplacingOccurrencesOfString(target, withString: toString, range: self.range(range?.startIndex, toIndex: range?.endIndex))
+    }
+    
+    func replaceRegex(regex: String, toString: String, range: Range<Int>? = nil) -> String {
+        return Regex(regex)?.matchReplace(self, toString: toString, range: range) ?? self
+    }
+    
+    func remove(target: String, range: Range<Int>? = nil) -> String {
+        return replace(target, toString: "", range: range)
+    }
+    
+    func removeRegex(regex: String, range: Range<Int>? = nil) -> String {
+        return replaceRegex(regex, toString: "", range: range)
     }
     
     func separate(separator: String) -> [String] {
         return componentsSeparatedByString(separator)
     }
     
+    func eachLine(@noescape body: String -> ()) {
+        separate("\n").forEach(body)
+    }
+    
+    func mapLine(@noescape transform: String -> String) -> String {
+        return separate("\n").map(transform).joinWithSeparator("\n")
+    }
+    
     func prefixUpTo(index: Int) -> String? {
-        guard characters.count > index else {
+        guard length > index else {
             return nil
         }
         let index = characters.startIndex.advancedBy(index)
@@ -28,15 +73,15 @@ public extension String {
     }
     
     func prefixUpTo(aString: String) -> String? {
-        let components = componentsSeparatedByString(aString)
-        guard let prefix = components.first where components.count > 1 else {
+        let separated = separate(aString)
+        guard let prefix = separated.first where separated.count > 1 else {
             return nil
         }
         return prefix
     }
     
     func prefixThrough(index: Int) -> String? {
-        guard characters.count > index else  {
+        guard length > index else  {
             return nil
         }
         let index = characters.startIndex.advancedBy(index)
@@ -51,11 +96,10 @@ public extension String {
     }
     
     func suffixFrom(index: Int) -> String? {
-        guard characters.count > index else {
+        guard length > index else {
             return nil
         }
-        let index = characters.startIndex.advancedBy(index)
-        return substringWithRange(Range<Index>(start: index, end: characters.endIndex))
+        return substringWithRange(range(index))
     }
     
     func suffixFrom(aString: String) -> String? {
@@ -70,13 +114,12 @@ public extension String {
         guard characters.count > afterIndex else {
             return nil
         }
-        let index = characters.startIndex.advancedBy(afterIndex)
-        return substringFromIndex(index)
+        return substringFromIndex(Index(index + 1))
     }
     
     func suffixAfter(aString: String) -> String? {
-        let components = componentsSeparatedByString(aString)
-        guard let suffix = components.last where components.count > 1 else {
+        let separated = separate(aString)
+        guard let suffix = separated.last where separated.count > 1 else {
             return nil
         }
         return suffix

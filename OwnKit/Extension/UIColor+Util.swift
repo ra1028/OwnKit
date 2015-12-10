@@ -9,107 +9,107 @@
 public extension UIColor {
     var hue: CGFloat {
         var h: CGFloat = 0
-        self.getHue(&h, saturation: nil, brightness: nil, alpha: nil)
+        getHue(&h, saturation: nil, brightness: nil, alpha: nil)
         return h
     }
     
     var saturation: CGFloat {
         var s: CGFloat = 0
-        self.getHue(nil, saturation: &s, brightness: nil, alpha: nil)
+        getHue(nil, saturation: &s, brightness: nil, alpha: nil)
         return s
     }
     
     var brightness: CGFloat {
         var b: CGFloat = 0
-        self.getHue(nil, saturation: nil, brightness: &b, alpha: nil)
+        getHue(nil, saturation: nil, brightness: &b, alpha: nil)
         return b
     }
     
     var white: CGFloat {
         var w: CGFloat = 0
-        self.getWhite(&w, alpha: nil)
+        getWhite(&w, alpha: nil)
         return w
     }
     
     var red: CGFloat {
         var r: CGFloat = 0
-        self.getRed(&r, green: nil, blue: nil, alpha: nil)
+        getRed(&r, green: nil, blue: nil, alpha: nil)
         return r
     }
     
     var green: CGFloat {
         var g: CGFloat = 0
-        self.getRed(nil, green: &g, blue: nil, alpha: nil)
+        getRed(nil, green: &g, blue: nil, alpha: nil)
         return g
     }
     
     var blue: CGFloat {
         var b: CGFloat = 0
-        self.getRed(nil, green: nil, blue: &b, alpha: nil)
+        getRed(nil, green: nil, blue: &b, alpha: nil)
         return b
     }
     
     var alpha: CGFloat {
         var a: CGFloat = 0
-        self.getWhite(nil, alpha: &a)
+        getWhite(nil, alpha: &a)
         return a
     }
     
     func alphaColor(alpha: CGFloat) -> UIColor {
-        return self.colorWithAlphaComponent(alpha)
+        return colorWithAlphaComponent(alpha)
     }
     
     func blendColor(aColor: UIColor, ratio: CGFloat = 0.5) -> UIColor {
         let mainRatio = 1 - ratio
-        let red = self.red * mainRatio + aColor.red * ratio
-        let green = self.green * mainRatio + aColor.green * ratio
-        let blue = self.blue * mainRatio + aColor.blue * ratio
-        let alpha = self.alpha * mainRatio + aColor.alpha * ratio
-        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
+        let r = red * mainRatio + aColor.red * ratio
+        let g = green * mainRatio + aColor.green * ratio
+        let b = blue * mainRatio + aColor.blue * ratio
+        let a = alpha * mainRatio + aColor.alpha * ratio
+        return UIColor(red: r, green: g, blue: b, alpha: a)
     }
     
     func brightColor(brightten: CGFloat) -> UIColor {
-        return UIColor(hue: self.hue, saturation: self.saturation, brightness: self.brightness * brightten, alpha: self.alpha)
+        return UIColor(hue: hue, saturation: saturation, brightness: brightness * brightten, alpha: alpha)
     }
     
     convenience init(hex3: UInt16, alpha: CGFloat = 1) {
         let divisor = CGFloat(15)
-        let red = CGFloat((hex3 & 0xF00) >> 8) / divisor
-        let green = CGFloat((hex3 & 0x0F0) >> 4) / divisor
-        let blue = CGFloat( hex3 & 0x00F ) / divisor
-        self.init(red: red, green: green, blue: blue, alpha: alpha)
+        let r = CGFloat((hex3 & 0xF00) >> 8) / divisor
+        let g = CGFloat((hex3 & 0x0F0) >> 4) / divisor
+        let b = CGFloat( hex3 & 0x00F ) / divisor
+        self.init(red: r, green: g, blue: b, alpha: alpha)
     }
     
     convenience init(hex4: UInt16) {
         let divisor = CGFloat(15)
-        let red = CGFloat((hex4 & 0xF000) >> 12) / divisor
-        let green = CGFloat((hex4 & 0x0F00) >> 8) / divisor
-        let blue = CGFloat((hex4 & 0x00F0) >> 4) / divisor
-        let alpha = CGFloat( hex4 & 0x000F ) / divisor
-        self.init(red: red, green: green, blue: blue, alpha: alpha)
+        let r = CGFloat((hex4 & 0xF000) >> 12) / divisor
+        let g = CGFloat((hex4 & 0x0F00) >> 8) / divisor
+        let b = CGFloat((hex4 & 0x00F0) >> 4) / divisor
+        let a = CGFloat( hex4 & 0x000F ) / divisor
+        self.init(red: r, green: g, blue: b, alpha: a)
     }
     
     convenience init(hex6: UInt32, alpha: CGFloat = 1) {
         let divisor = CGFloat(255)
-        let red = CGFloat((hex6 & 0xFF0000) >> 16) / divisor
-        let green = CGFloat((hex6 & 0x00FF00) >> 8) / divisor
-        let blue = CGFloat( hex6 & 0x0000FF ) / divisor
-        self.init(red: red, green: green, blue: blue, alpha: alpha)
+        let r = CGFloat((hex6 & 0xFF0000) >> 16) / divisor
+        let g = CGFloat((hex6 & 0x00FF00) >> 8) / divisor
+        let b = CGFloat( hex6 & 0x0000FF ) / divisor
+        self.init(red: r, green: g, blue: b, alpha: alpha)
     }
     
     convenience init(hex8: UInt32) {
         let divisor = CGFloat(255)
-        let red = CGFloat((hex8 & 0xFF000000) >> 24) / divisor
-        let green = CGFloat((hex8 & 0x00FF0000) >> 16) / divisor
-        let blue = CGFloat((hex8 & 0x0000FF00) >> 8) / divisor
-        let alpha = CGFloat( hex8 & 0x000000FF ) / divisor
-        self.init(red: red, green: green, blue: blue, alpha: alpha)
+        let r = CGFloat((hex8 & 0xFF000000) >> 24) / divisor
+        let g = CGFloat((hex8 & 0x00FF0000) >> 16) / divisor
+        let b = CGFloat((hex8 & 0x0000FF00) >> 8) / divisor
+        let a = CGFloat( hex8 & 0x000000FF ) / divisor
+        self.init(red: r, green: g, blue: b, alpha: a)
     }
     
     convenience init(hexString: String) {
         var hex: UInt32 = 0
-        let trimHex = hexString.stringByReplacingOccurrencesOfString("[^0-9a-fA-F]", withString: "", options: .RegularExpressionSearch)
-        NSScanner(string: trimHex).scanHexInt(&hex)
-        self.init(hex6: hex, alpha: 1)
+        let trimmedHex = hexString.removeRegex("[^0-9a-fA-F]")
+        NSScanner(string: trimmedHex).scanHexInt(&hex)
+        self.init(hex6: hex)
     }
 }

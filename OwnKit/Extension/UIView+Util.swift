@@ -7,7 +7,7 @@
 //
 
 public extension UIView {
-    static func instantiate() -> Self {
+    static func instantiate() -> Self {        
         return UINib.instantiate(self)
     }
 }
