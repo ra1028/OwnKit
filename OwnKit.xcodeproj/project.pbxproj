@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A41D76E1C1B38D2001D7E03 /* CGRect+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A41D76D1C1B38D2001D7E03 /* CGRect+OwnKit.swift */; };
-		2A41D7701C1B4608001D7E03 /* AttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A41D76F1C1B4608001D7E03 /* AttributedString.swift */; };
+		2A41D7701C1B4608001D7E03 /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A41D76F1C1B4608001D7E03 /* Attribute.swift */; };
 		2A71E35F1C13AEE900EBF954 /* OwnKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A71E35E1C13AEE900EBF954 /* OwnKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A71E36E1C13AEFF00EBF954 /* String+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A71E3671C13AEFF00EBF954 /* String+OwnKit.swift */; };
 		2A71E36F1C13AEFF00EBF954 /* UINib+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A71E3681C13AEFF00EBF954 /* UINib+OwnKit.swift */; };
@@ -29,7 +29,7 @@
 
 /* Begin PBXFileReference section */
 		2A41D76D1C1B38D2001D7E03 /* CGRect+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+OwnKit.swift"; sourceTree = "<group>"; };
-		2A41D76F1C1B4608001D7E03 /* AttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedString.swift; sourceTree = "<group>"; };
+		2A41D76F1C1B4608001D7E03 /* Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
 		2A71E35B1C13AEE900EBF954 /* OwnKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OwnKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A71E35E1C13AEE900EBF954 /* OwnKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OwnKit.h; sourceTree = "<group>"; };
 		2A71E3601C13AEE900EBF954 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 			children = (
 				2A828CC11C19F4CF00E6129C /* Regex.swift */,
 				2A828CC31C1A003600E6129C /* Measure.swift */,
-				2A41D76F1C1B4608001D7E03 /* AttributedString.swift */,
+				2A41D76F1C1B4608001D7E03 /* Attribute.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -204,7 +204,7 @@
 				2A828CC21C19F4CF00E6129C /* Regex.swift in Sources */,
 				2A828CC61C1A02BC00E6129C /* UIDevice+OwnKit.swift in Sources */,
 				2A828CC01C19CC0900E6129C /* Index+OwnKit.swift in Sources */,
-				2A41D7701C1B4608001D7E03 /* AttributedString.swift in Sources */,
+				2A41D7701C1B4608001D7E03 /* Attribute.swift in Sources */,
 				2A71E36E1C13AEFF00EBF954 /* String+OwnKit.swift in Sources */,
 				2A71E3701C13AEFF00EBF954 /* UIStoryboard+OwnKit.swift in Sources */,
 				2A828CBA1C19C0AA00E6129C /* Array+OwnKit.swift in Sources */,

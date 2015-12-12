@@ -60,6 +60,7 @@ public extension UIColor {
     }
     
     func blendColor(aColor: UIColor, ratio: CGFloat = 0.5) -> UIColor {
+        let ratio = min(1, max(0, ratio))
         let mainRatio = 1 - ratio
         let r = red * mainRatio + aColor.red * ratio
         let g = green * mainRatio + aColor.green * ratio

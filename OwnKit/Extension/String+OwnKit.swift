@@ -16,7 +16,7 @@ public extension String {
     }
     
     static func classNameOf(aClass: AnyClass) -> String {
-        return NSStringFromClass(aClass).componentsSeparatedByString(".").last!
+        return NSStringFromClass(aClass).separate(".").last!
     }
     
     func range(fromIndex: Int? = nil, toIndex: Int? = nil) -> Range<Index> {
@@ -37,6 +37,14 @@ public extension String {
     }
     
     func removeSpaces() -> String {
+        return removeRegex("　| |\t")
+    }
+    
+    func removeLineBreaks() -> String {
+        return removeRegex("\n|\r|\\f|\\v")
+    }
+    
+    func removeSpaceAndLineBreaks() -> String {
         return removeRegex("\\s")
     }
     
