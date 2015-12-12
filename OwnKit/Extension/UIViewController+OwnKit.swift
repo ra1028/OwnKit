@@ -1,5 +1,5 @@
 //
-//  UIViewController+Util.swift
+//  UIViewController+OwnKit.swift
 //  OwnedKit
 //
 //  Created by Ryo Aoyama on 12/6/15.

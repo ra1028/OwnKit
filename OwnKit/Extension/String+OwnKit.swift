@@ -1,5 +1,5 @@
 //
-//  String+Util.swift
+//  String+OwnKit.swift
 //  Pods
 //
 //  Created by Ryo Aoyama on 12/6/15.
@@ -15,6 +15,10 @@ public extension String {
         return !isEmpty
     }
     
+    static func classNameOf(aClass: AnyClass) -> String {
+        return NSStringFromClass(aClass).componentsSeparatedByString(".").last!
+    }
+    
     func range(fromIndex: Int? = nil, toIndex: Int? = nil) -> Range<Index> {
         switch (fromIndex, toIndex) {
         case (let fromIndex?, let toIndex?):
@@ -28,11 +32,15 @@ public extension String {
         }
     }
     
-    func removeSpace() -> String {
-        return removeRegex("( |\n)")
+    func rangeOfString(aString: String) -> Range<Int>? {
+        return Regex(aString)?.matchResults(self).first?.range.toRange()
     }
     
-    func trimSpace() -> String {
+    func removeSpaces() -> String {
+        return removeRegex("\\s")
+    }
+    
+    func trimSpaces() -> String {
         return stringByTrimmingCharactersInSet(.whitespaceAndNewlineCharacterSet())
     }
     
@@ -41,7 +49,7 @@ public extension String {
     }
     
     func replaceRegex(regex: String, toString: String, range: Range<Int>? = nil) -> String {
-        return Regex(regex)?.matchReplace(self, toString: toString, range: range) ?? self
+        return Regex(regex)?.replaceMatches(self, toString: toString, range: range) ?? self
     }
     
     func remove(target: String, range: Range<Int>? = nil) -> String {
@@ -95,14 +103,14 @@ public extension String {
         return prefix + aString
     }
     
-    func suffixFrom(index: Int) -> String? {
+    func suffixThrough(index: Int) -> String? {
         guard length > index else {
             return nil
         }
         return substringWithRange(range(index))
     }
     
-    func suffixFrom(aString: String) -> String? {
+    func suffixThrough(aString: String) -> String? {
         guard let suffix = suffixAfter(aString) else {
             return nil
         }

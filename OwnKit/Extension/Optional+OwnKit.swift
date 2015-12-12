@@ -1,5 +1,5 @@
 //
-//  Optional+Util.swift
+//  Optional+OwnKit.swift
 //  OwnKit
 //
 //  Created by Ryo Aoyama on 12/10/15.

@@ -22,7 +22,7 @@ public struct Regex {
         return matchResults(target, options: options, range: range).isNotEmpty
     }
     
-    public func matchReplace(target: String, toString: String, options: NSMatchingOptions = [], range: Range<Int>? = nil) -> String {
+    public func replaceMatches(target: String, toString: String, options: NSMatchingOptions = [], range: Range<Int>? = nil) -> String {
         if let range = range {
             return matcher.stringByReplacingMatchesInString(target, options: options, range: NSRange(range), withTemplate: toString)
         } else {
@@ -30,8 +30,8 @@ public struct Regex {
         }
     }
     
-    public func matchRemove(target: String, range: Range<Int>? = nil) -> String {
-        return matchReplace(target, toString: "", range: range)
+    public func removeMatches(target: String, range: Range<Int>? = nil) -> String {
+        return replaceMatches(target, toString: "", range: range)
     }
     
     public func matchResults(target: String, options: NSMatchingOptions = [], range: Range<Int>? = nil) -> [NSTextCheckingResult] {

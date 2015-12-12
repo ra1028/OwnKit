@@ -1,5 +1,5 @@
 //
-//  Index+Util.swift
+//  Index+OwnKit.swift
 //  OwnKit
 //
 //  Created by Ryo Aoyama on 12/11/15.
