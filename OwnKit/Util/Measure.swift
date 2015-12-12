@@ -11,6 +11,10 @@ public struct Measure {
         return UIApplication.sharedApplication().statusBarFrame.height
     }
     
+    static var screenSize: CGSize {
+        return UIScreen.mainScreen().bounds.size
+    }
+    
     static var screenHeight: CGFloat {
         return UIScreen.mainScreen().bounds.height
     }
@@ -25,6 +29,10 @@ public struct Measure {
     
     static var isPad: Bool {
         return UIDevice.currentDevice().isPad
+    }
+    
+    static var deviceSize: CGSize {
+        return UIDevice.currentDevice().size
     }
     
     static var deviceHeight: CGFloat {

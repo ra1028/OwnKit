@@ -20,16 +20,10 @@ public extension String {
     }
     
     func range(fromIndex: Int? = nil, toIndex: Int? = nil) -> Range<Index> {
-        switch (fromIndex, toIndex) {
-        case (let fromIndex?, let toIndex?):
-            return startIndex.advancedBy(fromIndex)..<startIndex.advancedBy(toIndex)
-        case (let fromIndex?, .None):
-            return startIndex.advancedBy(fromIndex)..<endIndex
-        case (.None, let toIndex?):
-            return startIndex..<startIndex.advancedBy(toIndex)
-        case (.None, .None):
-            return startIndex..<endIndex
+        guard let toIndex = toIndex else {
+            return return startIndex.advancedBy(fromIndex ?? 0)..<endIndex
         }
+        return startIndex.advancedBy(fromIndex ?? 0)..<startIndex.advancedBy(toIndex)
     }
     
     func rangeOfString(aString: String) -> Range<Int>? {

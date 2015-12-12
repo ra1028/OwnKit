@@ -22,6 +22,10 @@ public extension UIDevice {
         return userInterfaceIdiom == .Pad
     }
     
+    var size: CGSize {
+        return CGSize(width: width, height: height)
+    }
+    
     var height: CGFloat {
         return Measure.isPortrait ? Measure.screenHeight : Measure.screenWidth
     }
