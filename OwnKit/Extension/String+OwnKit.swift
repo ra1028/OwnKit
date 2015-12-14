@@ -21,7 +21,7 @@ public extension String {
     
     func range(fromIndex: Int? = nil, toIndex: Int? = nil) -> Range<Index> {
         guard let toIndex = toIndex else {
-            return return startIndex.advancedBy(fromIndex ?? 0)..<endIndex
+            return startIndex.advancedBy(fromIndex ?? 0)..<endIndex
         }
         return startIndex.advancedBy(fromIndex ?? 0)..<startIndex.advancedBy(toIndex)
     }

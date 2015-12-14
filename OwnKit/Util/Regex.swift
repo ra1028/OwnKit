@@ -8,8 +8,10 @@
 
 public struct Regex {
     private let matcher: NSRegularExpression
-    
-    public init?(_ pattern: String, options: NSRegularExpressionOptions = []) {
+}
+
+public extension Regex {
+    init?(_ pattern: String, options: NSRegularExpressionOptions = []) {
         do {
             matcher = try NSRegularExpression(pattern: pattern, options: options)
         } catch {
@@ -18,11 +20,11 @@ public struct Regex {
         }
     }
     
-    public func match(target: String, options: NSMatchingOptions = [], range: Range<Int>? = nil) -> Bool {
+    func match(target: String, options: NSMatchingOptions = [], range: Range<Int>? = nil) -> Bool {
         return matchResults(target, options: options, range: range).isNotEmpty
     }
     
-    public func replaceMatches(target: String, toString: String, options: NSMatchingOptions = [], range: Range<Int>? = nil) -> String {
+    func replaceMatches(target: String, toString: String, options: NSMatchingOptions = [], range: Range<Int>? = nil) -> String {
         if let range = range {
             return matcher.stringByReplacingMatchesInString(target, options: options, range: NSRange(range), withTemplate: toString)
         } else {
@@ -30,11 +32,11 @@ public struct Regex {
         }
     }
     
-    public func removeMatches(target: String, range: Range<Int>? = nil) -> String {
+    func removeMatches(target: String, range: Range<Int>? = nil) -> String {
         return replaceMatches(target, toString: "", range: range)
     }
     
-    public func matchResults(target: String, options: NSMatchingOptions = [], range: Range<Int>? = nil) -> [NSTextCheckingResult] {
+    func matchResults(target: String, options: NSMatchingOptions = [], range: Range<Int>? = nil) -> [NSTextCheckingResult] {
         if let range = range {
             return matcher.matchesInString(target, options: options, range: NSRange(range))
         } else {

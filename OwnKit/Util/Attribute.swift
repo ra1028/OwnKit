@@ -93,12 +93,16 @@ public enum StringAttributes {
 
 public final class Attribute {
     private var attributes = [(attribute: StringAttributes, range: NSRange?)]()
-    
-    init(attribute: StringAttributes, range: Range<Int>? = nil) {
+}
+
+public extension Attribute {
+    convenience init(attribute: StringAttributes, range: Range<Int>? = nil) {
+        self.init()
         add(attribute, range: range)
     }
     
-    init(attributes: [StringAttributes], range: Range<Int>? = nil) {
+    convenience init(attributes: [StringAttributes], range: Range<Int>? = nil) {
+        self.init()
         add(attributes, range: range)
     }
     
