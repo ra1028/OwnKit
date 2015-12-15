@@ -7,10 +7,6 @@
 //
 
 public extension UIView {
-    static func instantiate() -> Self {        
-        return UINib.instantiate(self)
-    }
-    
     var size: CGSize {
         return bounds.size
     }
@@ -57,5 +53,29 @@ public extension UIView {
     
     var maxY: CGFloat {
         return frame.maxY
+    }
+    
+    static func instantiate() -> Self {
+        return UINib.instantiate(self)
+    }
+    
+    func addFillConstraints() {
+        guard let superview = superview else { return }
+        translatesAutoresizingMaskIntoConstraints = false
+        let constraints = [
+            NSLayoutConstraint.constraintsWithVisualFormat(
+                "V:|-0-[view]-0-|",
+                options: [],
+                metrics: nil,
+                views: ["view": self]
+            ),
+            NSLayoutConstraint.constraintsWithVisualFormat(
+                "H:|-0-[view]-0-|",
+                options: [],
+                metrics: nil,
+                views: ["view": self]
+            )
+            ].flatMap { $0 }
+        superview.addConstraints(constraints)
     }
 }
