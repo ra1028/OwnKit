@@ -15,6 +15,10 @@ public extension Int {
         return !isEven
     }
     
+    var string: String {
+        return "\(self)"
+    }
+    
     func times(@noescape body: Int -> ()) {
         guard self > 0 else { return }
         (0..<self).forEach(body)

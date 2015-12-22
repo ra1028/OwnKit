@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A3583D01C272CFA000F8870 /* CGSize+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3583CF1C272CFA000F8870 /* CGSize+OwnKit.swift */; };
+		2A3583D61C273DB5000F8870 /* UIScrollView+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3583D51C273DB5000F8870 /* UIScrollView+OwnKit.swift */; };
 		2A41D76E1C1B38D2001D7E03 /* CGRect+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A41D76D1C1B38D2001D7E03 /* CGRect+OwnKit.swift */; };
 		2A41D7701C1B4608001D7E03 /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A41D76F1C1B4608001D7E03 /* Attribute.swift */; };
 		2A71E35F1C13AEE900EBF954 /* OwnKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A71E35E1C13AEE900EBF954 /* OwnKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -24,10 +26,13 @@
 		2A828CC21C19F4CF00E6129C /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A828CC11C19F4CF00E6129C /* Regex.swift */; };
 		2A828CC41C1A003600E6129C /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A828CC31C1A003600E6129C /* Measure.swift */; };
 		2A828CC61C1A02BC00E6129C /* UIDevice+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A828CC51C1A02BC00E6129C /* UIDevice+OwnKit.swift */; };
+		2AA5CCA01C25FE9D0003BB00 /* UIImage+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA5CC9F1C25FE9D0003BB00 /* UIImage+OwnKit.swift */; };
 		2ACC3C461C194DF300F6EB6F /* UIColor+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC3C451C194DF300F6EB6F /* UIColor+OwnKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A3583CF1C272CFA000F8870 /* CGSize+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize+OwnKit.swift"; sourceTree = "<group>"; };
+		2A3583D51C273DB5000F8870 /* UIScrollView+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+OwnKit.swift"; sourceTree = "<group>"; };
 		2A41D76D1C1B38D2001D7E03 /* CGRect+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+OwnKit.swift"; sourceTree = "<group>"; };
 		2A41D76F1C1B4608001D7E03 /* Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
 		2A71E35B1C13AEE900EBF954 /* OwnKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OwnKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +52,7 @@
 		2A828CC11C19F4CF00E6129C /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		2A828CC31C1A003600E6129C /* Measure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
 		2A828CC51C1A02BC00E6129C /* UIDevice+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+OwnKit.swift"; sourceTree = "<group>"; };
+		2AA5CC9F1C25FE9D0003BB00 /* UIImage+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+OwnKit.swift"; sourceTree = "<group>"; };
 		2ACC3C451C194DF300F6EB6F /* UIColor+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+OwnKit.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +111,9 @@
 				2A828CBF1C19CC0900E6129C /* Index+OwnKit.swift */,
 				2A828CC51C1A02BC00E6129C /* UIDevice+OwnKit.swift */,
 				2A41D76D1C1B38D2001D7E03 /* CGRect+OwnKit.swift */,
+				2AA5CC9F1C25FE9D0003BB00 /* UIImage+OwnKit.swift */,
+				2A3583CF1C272CFA000F8870 /* CGSize+OwnKit.swift */,
+				2A3583D51C273DB5000F8870 /* UIScrollView+OwnKit.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -201,8 +210,10 @@
 				2A71E3721C13AEFF00EBF954 /* UIViewController+OwnKit.swift in Sources */,
 				2A828CB61C19B3A000E6129C /* Range+OwnKit.swift in Sources */,
 				2A828CC41C1A003600E6129C /* Measure.swift in Sources */,
+				2AA5CCA01C25FE9D0003BB00 /* UIImage+OwnKit.swift in Sources */,
 				2A828CC21C19F4CF00E6129C /* Regex.swift in Sources */,
 				2A828CC61C1A02BC00E6129C /* UIDevice+OwnKit.swift in Sources */,
+				2A3583D01C272CFA000F8870 /* CGSize+OwnKit.swift in Sources */,
 				2A828CC01C19CC0900E6129C /* Index+OwnKit.swift in Sources */,
 				2A41D7701C1B4608001D7E03 /* Attribute.swift in Sources */,
 				2A71E36E1C13AEFF00EBF954 /* String+OwnKit.swift in Sources */,
@@ -215,6 +226,7 @@
 				2A71E3711C13AEFF00EBF954 /* UIView+OwnKit.swift in Sources */,
 				2A71E36F1C13AEFF00EBF954 /* UINib+OwnKit.swift in Sources */,
 				2A41D76E1C1B38D2001D7E03 /* CGRect+OwnKit.swift in Sources */,
+				2A3583D61C273DB5000F8870 /* UIScrollView+OwnKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

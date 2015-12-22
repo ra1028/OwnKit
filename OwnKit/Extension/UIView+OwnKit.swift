@@ -59,23 +59,54 @@ public extension UIView {
         return UINib.instantiate(self)
     }
     
+    static func nonAnimate(@noescape body: () -> Void) {
+        setAnimationsEnabled(false)
+        body()
+        setAnimationsEnabled(true)
+    }
+    
+    static func animate(
+        duration: NSTimeInterval,
+        delay: NSTimeInterval = 0,
+        options: UIViewAnimationOptions = [],
+        animations: () -> Void,
+        completion: (Bool -> Void)? = nil) {
+            animateWithDuration(duration, delay: delay, options: options, animations: animations, completion: completion)
+    }
+    
     func addFillConstraints() {
         guard let superview = superview else { return }
         translatesAutoresizingMaskIntoConstraints = false
-        let constraints = [
-            NSLayoutConstraint.constraintsWithVisualFormat(
-                "V:|-0-[view]-0-|",
-                options: [],
-                metrics: nil,
-                views: ["view": self]
-            ),
+        let constraints =
+        NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:|-0-[view]-0-|",
+            options: [],
+            metrics: nil,
+            views: ["view": self]
+            ) +
             NSLayoutConstraint.constraintsWithVisualFormat(
                 "H:|-0-[view]-0-|",
                 options: [],
                 metrics: nil,
                 views: ["view": self]
-            )
-            ].flatMap { $0 }
+        )
         superview.addConstraints(constraints)
+    }
+    
+    func applyLayerRadius(radius: CGFloat) {
+        layer.masksToBounds = true
+        layer.cornerRadius = radius
+    }
+    
+    func applyCircleLayerRadius() {
+        layer.masksToBounds = true
+        layer.cornerRadius = height / 2
+    }
+    
+    func applyCornerMask(corners: UIRectCorner = .AllCorners, radii: CGSize) {
+        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: radii)
+        let mask = CAShapeLayer()
+        mask.path = path.CGPath
+        layer.mask = mask
     }
 }

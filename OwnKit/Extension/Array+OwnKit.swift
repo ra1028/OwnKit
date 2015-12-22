@@ -14,4 +14,11 @@ public extension Array {
     var isNotEmpty: Bool {
         return !isEmpty
     }
+    
+    func get(safeIndex: Int) -> Element? {
+        if count > safeIndex {
+            return self[safeIndex]
+        }
+        return nil
+    }
 }
