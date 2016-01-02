@@ -74,7 +74,7 @@ public extension UIColor {
     }
     
     convenience init(hex3: UInt16, alpha: CGFloat = 1) {
-        let divisor: CGFloat = 15
+        let divisor = 15.f
         let r = CGFloat((hex3 & 0xF00) >> 8) / divisor
         let g = CGFloat((hex3 & 0x0F0) >> 4) / divisor
         let b = CGFloat( hex3 & 0x00F ) / divisor
@@ -82,7 +82,7 @@ public extension UIColor {
     }
     
     convenience init(hex4: UInt16) {
-        let divisor: CGFloat = 15
+        let divisor = 15.f
         let r = CGFloat((hex4 & 0xF000) >> 12) / divisor
         let g = CGFloat((hex4 & 0x0F00) >> 8) / divisor
         let b = CGFloat((hex4 & 0x00F0) >> 4) / divisor
@@ -91,7 +91,7 @@ public extension UIColor {
     }
     
     convenience init(hex6: UInt32, alpha: CGFloat = 1) {
-        let divisor: CGFloat = 255
+        let divisor = 255.f
         let r = CGFloat((hex6 & 0xFF0000) >> 16) / divisor
         let g = CGFloat((hex6 & 0x00FF00) >> 8) / divisor
         let b = CGFloat( hex6 & 0x0000FF ) / divisor
@@ -99,7 +99,7 @@ public extension UIColor {
     }
     
     convenience init(hex8: UInt32) {
-        let divisor: CGFloat = 255
+        let divisor = 255.f
         let r = CGFloat((hex8 & 0xFF000000) >> 24) / divisor
         let g = CGFloat((hex8 & 0x00FF0000) >> 16) / divisor
         let b = CGFloat((hex8 & 0x0000FF00) >> 8) / divisor
@@ -108,7 +108,7 @@ public extension UIColor {
     }
     
     convenience init(hexString: String) {
-        var hex: UInt32 = 0
+        var hex = 0.u32
         let trimmedHex = hexString.removeRegex("[^0-9a-fA-F]")
         NSScanner(string: trimmedHex).scanHexInt(&hex)
         self.init(hex6: hex)

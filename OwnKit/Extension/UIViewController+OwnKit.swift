@@ -7,6 +7,7 @@
 //
 
 public extension UIViewController {
+    @warn_unused_result
     static func instantiate() -> Self {
         return UIStoryboard.instantiate(self)
     }

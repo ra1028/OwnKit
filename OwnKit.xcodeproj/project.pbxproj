@@ -7,10 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A03D2521C355E2C0030D62D /* Literal+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A03D2511C355E2C0030D62D /* Literal+OwnKit.swift */; };
+		2A03D25B1C35FEE70030D62D /* TransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A03D25A1C35FEE70030D62D /* TransitionAnimator.swift */; };
+		2A03D25D1C35FEFF0030D62D /* PopupTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A03D25C1C35FEFF0030D62D /* PopupTransitionAnimator.swift */; };
+		2A03D25F1C3606AA0030D62D /* TransitionProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A03D25E1C3606AA0030D62D /* TransitionProxy.swift */; };
+		2A14A9F71C31AFB500C4B82C /* UILabel+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A14A9F61C31AFB500C4B82C /* UILabel+OwnKit.swift */; };
+		2A2C97591C3804C500786715 /* InteractivePoppable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2C97581C3804C500786715 /* InteractivePoppable.swift */; };
+		2A2C975B1C38190000786715 /* UIButton+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2C975A1C38190000786715 /* UIButton+OwnKit.swift */; };
+		2A2C975D1C381D6400786715 /* AssociatedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2C975C1C381D6400786715 /* AssociatedObject.swift */; };
 		2A3583D01C272CFA000F8870 /* CGSize+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3583CF1C272CFA000F8870 /* CGSize+OwnKit.swift */; };
 		2A3583D61C273DB5000F8870 /* UIScrollView+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3583D51C273DB5000F8870 /* UIScrollView+OwnKit.swift */; };
 		2A41D76E1C1B38D2001D7E03 /* CGRect+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A41D76D1C1B38D2001D7E03 /* CGRect+OwnKit.swift */; };
 		2A41D7701C1B4608001D7E03 /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A41D76F1C1B4608001D7E03 /* Attribute.swift */; };
+		2A6EFA001C305C8B00627A15 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6EF9FF1C305C8B00627A15 /* Global.swift */; };
 		2A71E35F1C13AEE900EBF954 /* OwnKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A71E35E1C13AEE900EBF954 /* OwnKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A71E36E1C13AEFF00EBF954 /* String+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A71E3671C13AEFF00EBF954 /* String+OwnKit.swift */; };
 		2A71E36F1C13AEFF00EBF954 /* UINib+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A71E3681C13AEFF00EBF954 /* UINib+OwnKit.swift */; };
@@ -28,13 +37,23 @@
 		2A828CC61C1A02BC00E6129C /* UIDevice+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A828CC51C1A02BC00E6129C /* UIDevice+OwnKit.swift */; };
 		2AA5CCA01C25FE9D0003BB00 /* UIImage+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA5CC9F1C25FE9D0003BB00 /* UIImage+OwnKit.swift */; };
 		2ACC3C461C194DF300F6EB6F /* UIColor+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC3C451C194DF300F6EB6F /* UIColor+OwnKit.swift */; };
+		2AE9442B1C328FC800731062 /* Tweakable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE9442A1C328FC800731062 /* Tweakable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A03D2511C355E2C0030D62D /* Literal+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Literal+OwnKit.swift"; sourceTree = "<group>"; };
+		2A03D25A1C35FEE70030D62D /* TransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionAnimator.swift; sourceTree = "<group>"; };
+		2A03D25C1C35FEFF0030D62D /* PopupTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupTransitionAnimator.swift; sourceTree = "<group>"; };
+		2A03D25E1C3606AA0030D62D /* TransitionProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionProxy.swift; sourceTree = "<group>"; };
+		2A14A9F61C31AFB500C4B82C /* UILabel+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+OwnKit.swift"; sourceTree = "<group>"; };
+		2A2C97581C3804C500786715 /* InteractivePoppable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractivePoppable.swift; sourceTree = "<group>"; };
+		2A2C975A1C38190000786715 /* UIButton+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+OwnKit.swift"; sourceTree = "<group>"; };
+		2A2C975C1C381D6400786715 /* AssociatedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssociatedObject.swift; sourceTree = "<group>"; };
 		2A3583CF1C272CFA000F8870 /* CGSize+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize+OwnKit.swift"; sourceTree = "<group>"; };
 		2A3583D51C273DB5000F8870 /* UIScrollView+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+OwnKit.swift"; sourceTree = "<group>"; };
 		2A41D76D1C1B38D2001D7E03 /* CGRect+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+OwnKit.swift"; sourceTree = "<group>"; };
 		2A41D76F1C1B4608001D7E03 /* Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
+		2A6EF9FF1C305C8B00627A15 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		2A71E35B1C13AEE900EBF954 /* OwnKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OwnKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A71E35E1C13AEE900EBF954 /* OwnKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OwnKit.h; sourceTree = "<group>"; };
 		2A71E3601C13AEE900EBF954 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +73,7 @@
 		2A828CC51C1A02BC00E6129C /* UIDevice+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+OwnKit.swift"; sourceTree = "<group>"; };
 		2AA5CC9F1C25FE9D0003BB00 /* UIImage+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+OwnKit.swift"; sourceTree = "<group>"; };
 		2ACC3C451C194DF300F6EB6F /* UIColor+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+OwnKit.swift"; sourceTree = "<group>"; };
+		2AE9442A1C328FC800731062 /* Tweakable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweakable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +87,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A03D2591C35FEE70030D62D /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				2A03D25E1C3606AA0030D62D /* TransitionProxy.swift */,
+				2A03D25A1C35FEE70030D62D /* TransitionAnimator.swift */,
+				2A03D25C1C35FEFF0030D62D /* PopupTransitionAnimator.swift */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
 		2A71E3511C13AEE900EBF954 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				2A71E3661C13AEFF00EBF954 /* Extension */,
+				2AE944291C328FBF00731062 /* Protocol */,
 				2A71E36C1C13AEFF00EBF954 /* Util */,
 				2A71E35E1C13AEE900EBF954 /* OwnKit.h */,
 				2A71E3601C13AEE900EBF954 /* Info.plist */,
@@ -114,6 +145,9 @@
 				2AA5CC9F1C25FE9D0003BB00 /* UIImage+OwnKit.swift */,
 				2A3583CF1C272CFA000F8870 /* CGSize+OwnKit.swift */,
 				2A3583D51C273DB5000F8870 /* UIScrollView+OwnKit.swift */,
+				2A14A9F61C31AFB500C4B82C /* UILabel+OwnKit.swift */,
+				2A03D2511C355E2C0030D62D /* Literal+OwnKit.swift */,
+				2A2C975A1C38190000786715 /* UIButton+OwnKit.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -121,11 +155,23 @@
 		2A71E36C1C13AEFF00EBF954 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				2A03D2591C35FEE70030D62D /* Transition */,
 				2A828CC11C19F4CF00E6129C /* Regex.swift */,
 				2A828CC31C1A003600E6129C /* Measure.swift */,
 				2A41D76F1C1B4608001D7E03 /* Attribute.swift */,
+				2A6EF9FF1C305C8B00627A15 /* Global.swift */,
+				2A2C975C1C381D6400786715 /* AssociatedObject.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		2AE944291C328FBF00731062 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				2AE9442A1C328FC800731062 /* Tweakable.swift */,
+				2A2C97581C3804C500786715 /* InteractivePoppable.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,21 +258,31 @@
 				2A828CC41C1A003600E6129C /* Measure.swift in Sources */,
 				2AA5CCA01C25FE9D0003BB00 /* UIImage+OwnKit.swift in Sources */,
 				2A828CC21C19F4CF00E6129C /* Regex.swift in Sources */,
+				2A2C97591C3804C500786715 /* InteractivePoppable.swift in Sources */,
+				2A2C975B1C38190000786715 /* UIButton+OwnKit.swift in Sources */,
 				2A828CC61C1A02BC00E6129C /* UIDevice+OwnKit.swift in Sources */,
 				2A3583D01C272CFA000F8870 /* CGSize+OwnKit.swift in Sources */,
 				2A828CC01C19CC0900E6129C /* Index+OwnKit.swift in Sources */,
 				2A41D7701C1B4608001D7E03 /* Attribute.swift in Sources */,
+				2A03D25F1C3606AA0030D62D /* TransitionProxy.swift in Sources */,
 				2A71E36E1C13AEFF00EBF954 /* String+OwnKit.swift in Sources */,
 				2A71E3701C13AEFF00EBF954 /* UIStoryboard+OwnKit.swift in Sources */,
 				2A828CBA1C19C0AA00E6129C /* Array+OwnKit.swift in Sources */,
 				2ACC3C461C194DF300F6EB6F /* UIColor+OwnKit.swift in Sources */,
+				2A2C975D1C381D6400786715 /* AssociatedObject.swift in Sources */,
 				2A828CBE1C19C3E700E6129C /* Bool+OwnKit.swift in Sources */,
 				2A828CBC1C19C10D00E6129C /* Optional+OwnKit.swift in Sources */,
 				2A828CB81C19BB7E00E6129C /* Int+OwnKit.swift in Sources */,
+				2A03D25D1C35FEFF0030D62D /* PopupTransitionAnimator.swift in Sources */,
 				2A71E3711C13AEFF00EBF954 /* UIView+OwnKit.swift in Sources */,
 				2A71E36F1C13AEFF00EBF954 /* UINib+OwnKit.swift in Sources */,
+				2A14A9F71C31AFB500C4B82C /* UILabel+OwnKit.swift in Sources */,
+				2A03D2521C355E2C0030D62D /* Literal+OwnKit.swift in Sources */,
 				2A41D76E1C1B38D2001D7E03 /* CGRect+OwnKit.swift in Sources */,
 				2A3583D61C273DB5000F8870 /* UIScrollView+OwnKit.swift in Sources */,
+				2AE9442B1C328FC800731062 /* Tweakable.swift in Sources */,
+				2A6EFA001C305C8B00627A15 /* Global.swift in Sources */,
+				2A03D25B1C35FEE70030D62D /* TransitionAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

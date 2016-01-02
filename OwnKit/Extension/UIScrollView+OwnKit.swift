@@ -6,7 +6,15 @@
 //  Copyright © 2015 Ryo Aoyama. All rights reserved.
 //
 
-public extension UIScrollView {    
+public extension UIScrollView {
+    var contentHeight: CGFloat {
+        return contentSize.height
+    }
+    
+    var contentWidth: CGFloat {
+        return contentSize.width
+    }
+    
     func scrollToTop(animated animated: Bool) {
         setContentOffset(CGPoint(x: contentOffset.x, y: -contentInset.top), animated: animated)
     }

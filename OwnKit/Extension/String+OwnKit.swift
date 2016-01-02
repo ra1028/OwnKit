@@ -134,4 +134,11 @@ public extension String {
         }
         return suffix
     }
+    
+    func decodeFromBase64() -> String? {
+        if let data = NSData(base64EncodedString: self, options: .IgnoreUnknownCharacters) {
+            return String(data: data, encoding: NSUTF8StringEncoding)
+        }
+        return nil
+    }
 }

@@ -16,7 +16,7 @@ public extension Array {
     }
     
     func get(safeIndex: Int) -> Element? {
-        if count > safeIndex {
+        if count > safeIndex && safeIndex >= 0 {
             return self[safeIndex]
         }
         return nil

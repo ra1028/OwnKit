@@ -55,14 +55,9 @@ public extension UIView {
         return frame.maxY
     }
     
+    @warn_unused_result
     static func instantiate() -> Self {
         return UINib.instantiate(self)
-    }
-    
-    static func nonAnimate(@noescape body: () -> Void) {
-        setAnimationsEnabled(false)
-        body()
-        setAnimationsEnabled(true)
     }
     
     static func animate(
@@ -72,6 +67,37 @@ public extension UIView {
         animations: () -> Void,
         completion: (Bool -> Void)? = nil) {
             animateWithDuration(duration, delay: delay, options: options, animations: animations, completion: completion)
+    }
+    
+    static func animate(
+        duration: NSTimeInterval,
+        delay: NSTimeInterval = 0,
+        springDamping: CGFloat,
+        initialVelocity: CGFloat,
+        options: UIViewAnimationOptions = [],
+        animations: () -> Void,
+        completion: (Bool -> Void)? = nil) {
+            animateWithDuration(duration, delay: delay, usingSpringWithDamping: springDamping, initialSpringVelocity: initialVelocity, options: options, animations: animations, completion: completion)
+    }
+    
+    func setHiddenAnimated(hidden: Bool, duration: NSTimeInterval = 0.2) {
+        guard self.hidden != hidden else { return }
+        
+        UIView.transitionWithView(
+            self,
+            duration: duration,
+            options: .TransitionCrossDissolve,
+            animations: {
+                if NSThread.isMainThread() {
+                    self.hidden = hidden
+                } else {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.hidden = hidden
+                    }
+                }
+            },
+            completion: nil
+        )
     }
     
     func addFillConstraints() {
@@ -91,6 +117,25 @@ public extension UIView {
                 views: ["view": self]
         )
         superview.addConstraints(constraints)
+    }
+    
+    func applyShadow(
+        color: UIColor = .blackColor(),
+        opacity: Float = 1,
+        radius: CGFloat = 3,
+        offset: CGSize = .zero,
+        rasterize: Bool = false
+        ) {
+            layer.masksToBounds = false
+            layer.shadowColor = color.CGColor
+            layer.shadowOpacity = opacity
+            layer.shadowRadius = radius
+            layer.shadowOffset = offset
+            if rasterize {
+                layer.shouldRasterize = true
+                layer.shadowPath = UIBezierPath(rect: bounds).CGPath
+                layer.rasterizationScale = Measure.screenScale
+            }
     }
     
     func applyLayerRadius(radius: CGFloat) {

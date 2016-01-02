@@ -6,9 +6,15 @@
 //  Copyright © 2015 Ryo Aoyama. All rights reserved.
 //
 
-public struct Measure {    
+public struct Measure {}
+
+public extension Measure {
     static var statusBarHeight: CGFloat {
         return UIApplication.sharedApplication().statusBarFrame.height
+    }
+    
+    static var screenScale: CGFloat {
+        return UIScreen.mainScreen().scale
     }
     
     static var screenSize: CGSize {
