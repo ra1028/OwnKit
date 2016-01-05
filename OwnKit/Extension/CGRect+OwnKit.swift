@@ -6,6 +6,8 @@
 //  Copyright © 2015 Ryo Aoyama. All rights reserved.
 //
 
+import UIKit
+
 public extension CGRect {
     init(origin: CGPoint) {
         self.init(origin: origin, size: .zero)

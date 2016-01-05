@@ -6,6 +6,8 @@
 //  Copyright © 2015 Ryo Aoyama. All rights reserved.
 //
 
+import UIKit
+
 public extension UIImage {
     func roundedImage(radius: CGFloat) -> UIImage {
         let scale = UIScreen.mainScreen().scale

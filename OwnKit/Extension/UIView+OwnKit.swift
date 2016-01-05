@@ -6,6 +6,8 @@
 //  Copyright © 2015 Ryo Aoyama. All rights reserved.
 //
 
+import UIKit
+
 public extension UIView {
     var size: CGSize {
         return bounds.size
@@ -64,8 +66,16 @@ public extension UIView {
         duration: NSTimeInterval,
         delay: NSTimeInterval = 0,
         options: UIViewAnimationOptions = [],
+        animations: () -> Void) {
+            animate(duration, delay: delay, options: options, animations: animations, completion: nil)
+    }
+    
+    static func animate(
+        duration: NSTimeInterval,
+        delay: NSTimeInterval = 0,
+        options: UIViewAnimationOptions = [],
         animations: () -> Void,
-        completion: (Bool -> Void)? = nil) {
+        completion: (Bool -> Void)?) {
             animateWithDuration(duration, delay: delay, options: options, animations: animations, completion: completion)
     }
     
@@ -75,8 +85,18 @@ public extension UIView {
         springDamping: CGFloat,
         initialVelocity: CGFloat,
         options: UIViewAnimationOptions = [],
+        animations: () -> Void) {
+            animate(duration, delay: delay, springDamping: springDamping, initialVelocity: initialVelocity, options: options, animations: animations, completion: nil)
+    }
+    
+    static func animate(
+        duration: NSTimeInterval,
+        delay: NSTimeInterval = 0,
+        springDamping: CGFloat,
+        initialVelocity: CGFloat,
+        options: UIViewAnimationOptions = [],
         animations: () -> Void,
-        completion: (Bool -> Void)? = nil) {
+        completion: (Bool -> Void)?) {
             animateWithDuration(duration, delay: delay, usingSpringWithDamping: springDamping, initialSpringVelocity: initialVelocity, options: options, animations: animations, completion: completion)
     }
     
@@ -136,6 +156,45 @@ public extension UIView {
                 layer.shadowPath = UIBezierPath(rect: bounds).CGPath
                 layer.rasterizationScale = Measure.screenScale
             }
+    }
+    
+    func applyEdgeLine(color: UIColor, width: CGFloat = 1, edges: UIRectEdge) {
+        func addLineWithVisualFormatOfConstraints(horizontal h: String, vertical v: String) {
+            let line = UIView()
+            line.backgroundColor = color
+            line.translatesAutoresizingMaskIntoConstraints = false
+            addSubview(line)
+            let constraints = NSLayoutConstraint.constraintsWithVisualFormat(
+                h,
+                options: [],
+                metrics: ["width": width],
+                views: ["line": line]
+                ) +
+                NSLayoutConstraint.constraintsWithVisualFormat(
+                    v,
+                    options: [],
+                    metrics: ["width": width],
+                    views: ["line": line]
+            )
+            addConstraints(constraints)
+        }
+        if edges.contains(.Top) {
+            addLineWithVisualFormatOfConstraints(horizontal: "H:|-0-[line]-0-|", vertical: "V:|-0-[line(width)]")
+        }
+        if edges.contains(.Right) {
+            addLineWithVisualFormatOfConstraints(horizontal: "H:[line(width)]-0-|", vertical: "V:|-0-[line]-0-|")
+        }
+        if edges.contains(.Bottom) {
+            addLineWithVisualFormatOfConstraints(horizontal: "H:|-0-[line]-0-|", vertical: "V:[line(width)]-0-|")
+        }
+        if edges.contains(.Left) {
+            addLineWithVisualFormatOfConstraints(horizontal: "H:|-0-[line(width)]", vertical: "V:|-0-[line(width)]-0-|")
+        }
+    }
+    
+    func applyBoarder(color: UIColor, width: CGFloat) {
+        layer.borderColor = color.CGColor
+        layer.borderWidth = width
     }
     
     func applyLayerRadius(radius: CGFloat) {

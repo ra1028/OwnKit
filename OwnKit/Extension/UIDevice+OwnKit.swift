@@ -6,6 +6,8 @@
 //  Copyright © 2015 Ryo Aoyama. All rights reserved.
 //
 
+import UIKit
+
 public extension UIDevice {
     enum DeviceHeight: CGFloat {
         case Inches3_5 = 480

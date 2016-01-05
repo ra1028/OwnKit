@@ -6,6 +6,8 @@
 //  Copyright © 2015 Ryo Aoyama. All rights reserved.
 //
 
+import UIKit
+
 public func ratioValue(min minValue: CGFloat, max maxValue: CGFloat, minRatio: CGFloat = 0, maxRatio: CGFloat = 1, ratio: CGFloat) -> CGFloat {
     let ratio = max(minRatio, min(maxRatio, ratio))
     return maxValue - (maxValue - minValue) * ratio

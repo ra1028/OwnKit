@@ -8,6 +8,8 @@
 
 import Foundation
 
+import UIKit
+
 public protocol InteractivePoppable: UIGestureRecognizerDelegate {}
 
 public extension InteractivePoppable where Self: UIViewController {

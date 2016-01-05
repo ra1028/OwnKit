@@ -6,6 +6,8 @@
 //
 //
 
+import UIKit
+
 public extension String {
     var length: Int {
         return characters.count

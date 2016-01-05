@@ -6,6 +6,8 @@
 //  Copyright © 2015 Ryo Aoyama. All rights reserved.
 //
 
+import UIKit
+
 public extension UINib {
     static func instantiate<T: UIView>(type: T.Type, owner: AnyObject? = nil) -> T {
         let nibName = String.classNameOf(type)

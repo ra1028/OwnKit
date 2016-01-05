@@ -6,6 +6,8 @@
 //  Copyright © 2015 Ryo Aoyama. All rights reserved.
 //
 
+import UIKit
+
 public extension UIStoryboard {
     static func instantiate<T: UIViewController>(type: T.Type) -> T {
         let className = String.classNameOf(type)

@@ -6,6 +6,8 @@
 //  Copyright © 2015 Ryo Aoyama. All rights reserved.
 //
 
+import UIKit
+
 public extension IntegerLiteralType {
     var f: CGFloat {
         return CGFloat(self)

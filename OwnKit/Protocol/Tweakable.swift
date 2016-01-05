@@ -6,6 +6,8 @@
 //  Copyright © 2015 Ryo Aoyama. All rights reserved.
 //
 
+import UIKit
+
 public protocol Tweakable {}
 public extension Tweakable {
     func tweak(body: Self -> Void) -> Self {

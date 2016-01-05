@@ -6,41 +6,24 @@
 //  Copyright © 2016 Ryo Aoyama. All rights reserved.
 //
 
+import UIKit
+
+private extension AssociatedKeys {
+    static var hitAreaEdgeInsetsKey = AssociatedKey(UIEdgeInsetsZero)
+}
+
 public extension UIButton {
-    private struct AssociatedKeys {
-        static var hitAreaEdgeInsetsKey: Void?
-    }
-    
     var hitAreaEdgeInsets: UIEdgeInsets {
-        get {
-            if let object = objc_getAssociatedObject(self, &AssociatedKeys.hitAreaEdgeInsetsKey) as? AssociatedObject<UIEdgeInsets> {
-                return object.value
-            }
-            return UIEdgeInsetsZero
-        }
-        set {
-            objc_setAssociatedObject(self, &AssociatedKeys.hitAreaEdgeInsetsKey, AssociatedObject(value: newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
+        get { return fetchAssociate(.hitAreaEdgeInsetsKey) }
+        set { storeAssociate(.hitAreaEdgeInsetsKey, value: newValue) }
     }
     
-    var hitTestAreaEdgeInsetTop: CGFloat {
-        get { return hitAreaEdgeInsets.top }
-        set { hitAreaEdgeInsets.top = newValue }
+    func setHitAreaEdgeInsets(top: CGFloat = 0, right: CGFloat = 0 , bottom: CGFloat = 0, left: CGFloat = 0) {
+        hitAreaEdgeInsets = UIEdgeInsets(top: top, left: left, bottom: bottom, right: right)
     }
     
-    var hitTestAreaEdgeInsetLeft: CGFloat {
-        get { return hitAreaEdgeInsets.left }
-        set { hitAreaEdgeInsets.left = newValue }
-    }
-    
-    var hitTestAreaEdgeInsetBottom: CGFloat {
-        get { return hitAreaEdgeInsets.bottom }
-        set { hitAreaEdgeInsets.bottom = newValue }
-    }
-    
-    var hitTestAreaEdgeInsetRight: CGFloat {
-        get { return hitAreaEdgeInsets.right }
-        set { hitAreaEdgeInsets.right = newValue }
+    func setHitAreaEdgeInsets(inset inset: CGFloat) {
+        hitAreaEdgeInsets = UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
     }
     
     public override func pointInside(point: CGPoint, withEvent event: UIEvent?) -> Bool {
