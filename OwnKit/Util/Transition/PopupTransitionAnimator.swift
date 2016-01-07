@@ -37,7 +37,7 @@ public final class PopupTransitionAnimator: TransitionAnimator {
         let backgroundView = popupTransitionable.backgroundView
         let popupView = popupTransitionable.popupView
         containerView.addSubview(toView)
-        popupView.layer.transform = CATransform3DMakeTranslation(0, Measure.screenHeight, 0)
+        popupView.layer.transform = .translation(y: Measure.screenHeight)
         
         UIView.animate(
             duration,
@@ -47,8 +47,8 @@ public final class PopupTransitionAnimator: TransitionAnimator {
             animations: {
                 backgroundView.alpha = 0
                 backgroundView.alpha = 1
-                popupView.layer.transform = CATransform3DIdentity
-                fromView.layer.transform = CATransform3DMakeScale(self.pushBackScale, self.pushBackScale, 1)
+                popupView.layer.transform = .identity
+                fromView.layer.transform = .scale(x: self.pushBackScale, y: self.pushBackScale)
             }, completion: { _ in
                 transitionContext.completeTransition(true)
             }
@@ -66,7 +66,7 @@ public final class PopupTransitionAnimator: TransitionAnimator {
         
         let backgroundView = popupTransitionable.backgroundView
         let popupView = popupTransitionable.popupView
-        popupView.layer.transform = CATransform3DIdentity
+        popupView.layer.transform = .identity
         
         UIView.animate(
             duration,
@@ -76,8 +76,8 @@ public final class PopupTransitionAnimator: TransitionAnimator {
             animations: {
                 backgroundView.alpha = 1
                 backgroundView.alpha = 0
-                popupView.layer.transform = CATransform3DMakeTranslation(0, Measure.screenHeight, 0)
-                toView.layer.transform = CATransform3DIdentity
+                popupView.layer.transform = .translation(y: Measure.screenHeight)
+                toView.layer.transform = .identity
             }, completion: { _ in
                 transitionContext.completeTransition(true)
             }

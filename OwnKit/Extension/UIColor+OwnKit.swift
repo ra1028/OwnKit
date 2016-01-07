@@ -71,8 +71,8 @@ public extension UIColor {
         return UIColor(red: r, green: g, blue: b, alpha: a)
     }
     
-    func brightColor(brightten: CGFloat) -> UIColor {
-        return UIColor(hue: hue, saturation: saturation, brightness: brightness * brightten, alpha: alpha)
+    func brightColor(brighten: CGFloat) -> UIColor {
+        return UIColor(hue: hue, saturation: saturation, brightness: brightness * brighten, alpha: alpha)
     }
     
     convenience init(hex3: UInt16, alpha: CGFloat = 1) {

@@ -25,7 +25,7 @@ public extension CGAffineTransform {
         return CGAffineTransformMakeTranslation(x, y)
     }
     
-    static func scale(x x: CGFloat = 0, y: CGFloat = 0) -> CGAffineTransform {
+    static func scale(x x: CGFloat = 1, y: CGFloat = 1) -> CGAffineTransform {
         return CGAffineTransformMakeScale(x, y)
     }
     
@@ -41,7 +41,7 @@ public extension CGAffineTransform {
         return CGAffineTransformTranslate(self, x, y)
     }
     
-    func scale(x x: CGFloat = 0, y: CGFloat = 0) -> CGAffineTransform {
+    func scale(x x: CGFloat = 1, y: CGFloat = 1) -> CGAffineTransform {
         return CGAffineTransformScale(self, x, y)
     }
     

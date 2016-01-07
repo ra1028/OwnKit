@@ -100,6 +100,14 @@ public extension UIView {
             animateWithDuration(duration, delay: delay, usingSpringWithDamping: springDamping, initialSpringVelocity: initialVelocity, options: options, animations: animations, completion: completion)
     }
     
+    func fade(alpha: CGFloat, duration: NSTimeInterval = 0.2, delay: NSTimeInterval = 0, completion: (() -> Void)? = nil) {
+        UIView.animate(duration, delay: delay, options: .BeginFromCurrentState, animations: {
+            self.alpha = alpha
+            }, completion: { _ in
+                completion?()
+        })
+    }
+    
     func setHiddenAnimated(hidden: Bool, duration: NSTimeInterval = 0.2) {
         guard self.hidden != hidden else { return }
         

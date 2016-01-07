@@ -38,6 +38,7 @@
 		2A8DEDBF1C3C39B4007063BC /* CGAffineTransform+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8DEDBE1C3C39B4007063BC /* CGAffineTransform+OwnKit.swift */; };
 		2AA5CCA01C25FE9D0003BB00 /* UIImage+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA5CC9F1C25FE9D0003BB00 /* UIImage+OwnKit.swift */; };
 		2ACC3C461C194DF300F6EB6F /* UIColor+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC3C451C194DF300F6EB6F /* UIColor+OwnKit.swift */; };
+		2AE46B701C3EF34F0060F862 /* UITableView+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE46B6F1C3EF34F0060F862 /* UITableView+OwnKit.swift */; };
 		2AE9442B1C328FC800731062 /* Tweakable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE9442A1C328FC800731062 /* Tweakable.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		2A8DEDBE1C3C39B4007063BC /* CGAffineTransform+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGAffineTransform+OwnKit.swift"; sourceTree = "<group>"; };
 		2AA5CC9F1C25FE9D0003BB00 /* UIImage+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+OwnKit.swift"; sourceTree = "<group>"; };
 		2ACC3C451C194DF300F6EB6F /* UIColor+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+OwnKit.swift"; sourceTree = "<group>"; };
+		2AE46B6F1C3EF34F0060F862 /* UITableView+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+OwnKit.swift"; sourceTree = "<group>"; };
 		2AE9442A1C328FC800731062 /* Tweakable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweakable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +154,7 @@
 				2A2C975A1C38190000786715 /* UIButton+OwnKit.swift */,
 				2A8DEDBC1C3C348B007063BC /* CATransform3D+OwnKit.swift */,
 				2A8DEDBE1C3C39B4007063BC /* CGAffineTransform+OwnKit.swift */,
+				2AE46B6F1C3EF34F0060F862 /* UITableView+OwnKit.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				2AA5CCA01C25FE9D0003BB00 /* UIImage+OwnKit.swift in Sources */,
 				2A828CC21C19F4CF00E6129C /* Regex.swift in Sources */,
 				2A2C97591C3804C500786715 /* InteractivePoppable.swift in Sources */,
+				2AE46B701C3EF34F0060F862 /* UITableView+OwnKit.swift in Sources */,
 				2A2C975B1C38190000786715 /* UIButton+OwnKit.swift in Sources */,
 				2A828CC61C1A02BC00E6129C /* UIDevice+OwnKit.swift in Sources */,
 				2A3583D01C272CFA000F8870 /* CGSize+OwnKit.swift in Sources */,

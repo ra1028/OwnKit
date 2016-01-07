@@ -44,7 +44,7 @@ public extension CATransform3D {
         return CATransform3DMakeTranslation(x, y, z)
     }
     
-    static func scale(x x: CGFloat = 0, y: CGFloat = 0, z: CGFloat = 0) -> CATransform3D {
+    static func scale(x x: CGFloat = 1, y: CGFloat = 1, z: CGFloat = 1) -> CATransform3D {
         return CATransform3DMakeScale(x, y, z)
     }
     
@@ -60,7 +60,7 @@ public extension CATransform3D {
         return CATransform3DTranslate(self, x, y, z)
     }
     
-    func scale(x x: CGFloat = 0, y: CGFloat = 0, z: CGFloat = 0) -> CATransform3D {
+    func scale(x x: CGFloat = 1, y: CGFloat = 1, z: CGFloat = 1) -> CATransform3D {
         return CATransform3DScale(self, x, y, z)
     }
     
