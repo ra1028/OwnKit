@@ -9,13 +9,24 @@
 import UIKit
 
 private extension AssociatedKeys {
-    static var shouldCancelContentTouchesKey = AssociatedKey(false)
+    static var shouldCancelContentTouchesKey = AssociatedKey<Bool>()
 }
 
 public extension UITableView {
     var shouldCancelContentTouches: Bool {
-        get { return fetchAssociate(.shouldCancelContentTouchesKey) }
+        get { return fetchAssociate(.shouldCancelContentTouchesKey, initialValue: false) }
         set { storeAssociate(.shouldCancelContentTouchesKey, value: newValue) }
+    }
+    
+    func registerCell<T: UITableViewCell>(ofClass: T.Type, subIdentifier: String? = nil) -> Self {
+        let className = String.classNameOf(ofClass)
+        let identifier = className + (subIdentifier ?? "")
+        if UINib.isNibExist(className) {
+            registerNib(UINib(nibName: className, bundle: nil), forCellReuseIdentifier: identifier)
+        } else {
+            registerClass(ofClass, forCellReuseIdentifier: identifier)
+        }
+        return self
     }
     
     public override func touchesShouldCancelInContentView(view: UIView) -> Bool {

@@ -48,6 +48,10 @@ public extension CATransform3D {
         return CATransform3DMakeScale(x, y, z)
     }
     
+    static func scale(xy xy: CGFloat = 1, z: CGFloat = 1) -> CATransform3D {
+        return scale(x: xy, y: xy, z: z)
+    }
+    
     static func rotation(angle angle: CGFloat = 0, x: CGFloat = 0, y: CGFloat = 0, z: CGFloat = 0) -> CATransform3D {
         return CATransform3DMakeRotation(angle, x, y, z)
     }
@@ -62,6 +66,10 @@ public extension CATransform3D {
     
     func scale(x x: CGFloat = 1, y: CGFloat = 1, z: CGFloat = 1) -> CATransform3D {
         return CATransform3DScale(self, x, y, z)
+    }
+    
+    func scale(xy xy: CGFloat = 1, z: CGFloat = 1) -> CATransform3D {
+        return scale(x: xy, y: xy, z: z)
     }
     
     func rotation(angle angle: CGFloat = 0, x: CGFloat = 0, y: CGFloat = 0, z: CGFloat = 0) -> CATransform3D {

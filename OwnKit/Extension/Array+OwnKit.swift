@@ -21,4 +21,12 @@ public extension Array {
         }
         return nil
     }
+    
+    func enumerateEach(@noescape body: (Int, Element) -> Void) {
+        enumerate().forEach(body)
+    }
+    
+    func enumerateMap<T>(@noescape transform: (Int, Element) -> T) -> [T] {
+        return enumerate().map(transform)
+    }
 }

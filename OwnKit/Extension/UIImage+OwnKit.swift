@@ -19,4 +19,28 @@ public extension UIImage {
         UIGraphicsEndImageContext()
         return roundedImage
     }
+    
+    static func stringImage(
+        string: String,
+        font: UIFont,
+        color: UIColor,
+        size: CGSize? = nil) -> UIImage {
+            let attributedString = Attribute(attribute: .Font(font))
+                .add(.Color(color))
+                .add(.Alignment(.Center))
+                .string(string)
+            
+            let contextSize = size ?? CGSize(length: font.pointSize)
+            UIGraphicsBeginImageContextWithOptions(contextSize, false, Measure.screenScale)
+            let drawRect = CGRectMake(
+                (contextSize.width - font.pointSize) / 2,
+                (contextSize.height - font.pointSize) / 2,
+                contextSize.width,
+                contextSize.height
+            )
+            attributedString.drawInRect(drawRect)
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            return image
+    }
 }

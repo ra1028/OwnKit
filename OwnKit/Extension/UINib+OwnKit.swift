@@ -14,4 +14,8 @@ public extension UINib {
         let nib = UINib(nibName: nibName, bundle: .mainBundle())
         return nib.instantiateWithOwner(owner, options: nil).first as! T
     }
+    
+    static func isNibExist(name: String, bundle: NSBundle = .mainBundle()) -> Bool {
+        return bundle.pathForResource(name, ofType: "nib").isNotNil
+    }
 }

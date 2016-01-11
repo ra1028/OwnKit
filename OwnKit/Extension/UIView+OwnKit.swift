@@ -100,6 +100,60 @@ public extension UIView {
             animateWithDuration(duration, delay: delay, usingSpringWithDamping: springDamping, initialSpringVelocity: initialVelocity, options: options, animations: animations, completion: completion)
     }
     
+    func animateLayoutIfNeed(
+        duration: NSTimeInterval,
+        delay: NSTimeInterval = 0,
+        options: UIViewAnimationOptions = [],        
+        animations: () -> Void) {
+            UIView.animate(duration, delay: delay, options: options) {
+                animations()
+                self.layoutIfNeeded()
+            }
+    }
+    
+    func animateLayoutIfNeed(
+        duration: NSTimeInterval,
+        delay: NSTimeInterval = 0,
+        options: UIViewAnimationOptions = [],
+        animations: () -> Void,
+        completion: (Bool -> Void)?) {
+            UIView.animate(duration, delay: delay, options: options,
+                animations: {
+                    animations()
+                    self.layoutIfNeeded()
+                },
+                completion: completion)
+    }
+    
+    func animateLayoutIfNeed(
+        duration: NSTimeInterval,
+        delay: NSTimeInterval = 0,
+        springDamping: CGFloat,
+        initialVelocity: CGFloat,
+        options: UIViewAnimationOptions = [],
+        animations: () -> Void) {
+            UIView.animate(duration, delay: delay, springDamping: springDamping, initialVelocity: initialVelocity, options: options) {
+                animations()
+                self.layoutIfNeeded()
+            }
+    }
+    
+    func animateLayoutIfNeed(
+        duration: NSTimeInterval,
+        delay: NSTimeInterval = 0,
+        springDamping: CGFloat,
+        initialVelocity: CGFloat,
+        options: UIViewAnimationOptions = [],
+        animations: () -> Void,
+        completion: (Bool -> Void)?) {
+            UIView.animate(duration, delay: delay, springDamping: springDamping, initialVelocity: initialVelocity, options: options,
+                animations: {
+                    animations()
+                    self.layoutIfNeeded()
+                },
+                completion: completion)
+    }
+    
     func fade(alpha: CGFloat, duration: NSTimeInterval = 0.2, delay: NSTimeInterval = 0, completion: (() -> Void)? = nil) {
         UIView.animate(duration, delay: delay, options: .BeginFromCurrentState, animations: {
             self.alpha = alpha
@@ -206,12 +260,10 @@ public extension UIView {
     }
     
     func applyLayerRadius(radius: CGFloat) {
-        layer.masksToBounds = true
         layer.cornerRadius = radius
     }
     
     func applyCircleLayerRadius() {
-        layer.masksToBounds = true
         layer.cornerRadius = height / 2
     }
     

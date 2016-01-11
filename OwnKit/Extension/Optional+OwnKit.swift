@@ -26,8 +26,14 @@ public extension Optional {
         return !isNil
     }
     
-    func unwrap(@noescape f: Wrapped -> Void) {
+    func some(@noescape f: Wrapped -> Void) -> Optional {
         _ = map { f($0) }
+        return self
+    }
+    
+    func none(@noescape f: () -> Void) -> Optional {
+        if isNil { f() }
+        return self
     }
 }
 

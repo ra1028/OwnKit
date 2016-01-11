@@ -13,12 +13,12 @@ public protocol ObjectAssociatable: class {}
 extension NSObject: ObjectAssociatable {}
 
 public extension ObjectAssociatable {
-    func storeAssociate<T>(key: AssociatedKey<T>, value: T, policy: AssociationPolicy = .RetainNonatomic) {
+    func storeAssociate<T>(key: AssociatedKey<T>, value: T) {
         AssociatedObjects.store(self, key: key, value: value)
     }
     
-    func fetchAssociate<T>(key: AssociatedKey<T>) -> T {
-        return AssociatedObjects.fetch(self, key: key)
+    func fetchAssociate<T>(key: AssociatedKey<T>, @autoclosure initialValue: () -> T) -> T {
+        return AssociatedObjects.fetch(self, key: key, initialValue: initialValue)
     }
     
     func clearAssociates() {
@@ -50,9 +50,9 @@ public class AssociatedKeys {
 
 public final class AssociatedKey<T>: AssociatedKeys {
     private var keyValue: Void?
-    private let initialValue: T
-    public init(_ initialValue: T) {
-        self.initialValue = initialValue
+    private let policy: AssociationPolicy
+    public init(_ policy: AssociationPolicy = .RetainNonatomic) {
+        self.policy = policy
         super.init()
     }
 }
@@ -70,12 +70,17 @@ private final class AssociatedObject<T>: NSObject, NSCopying {
 }
 
 public enum AssociatedObjects {    
-    static func store<T>(to: AnyObject, key: AssociatedKey<T>, value: T, policy: AssociationPolicy = .RetainNonatomic) {
-        objc_setAssociatedObject(to, &key.keyValue, AssociatedObject(value), policy.value)
+    static func store<T>(to: AnyObject, key: AssociatedKey<T>, value: T) {
+        objc_setAssociatedObject(to, &key.keyValue, AssociatedObject(value), key.policy.value)
     }
     
-    static func fetch<T>(from: AnyObject, key: AssociatedKey<T>) -> T {
-        return (objc_getAssociatedObject(from, &key.keyValue) as? AssociatedObject<T>)?.value ?? key.initialValue
+    static func fetch<T>(from: AnyObject, key: AssociatedKey<T>, @autoclosure initialValue: () -> T) -> T {
+        if let object = objc_getAssociatedObject(from, &key.keyValue) as? AssociatedObject<T> {
+            return object.value
+        }
+        let initialValue = initialValue()
+        store(from, key: key, value: initialValue)
+        return initialValue
     }
     
     static func clear(from: AnyObject) {

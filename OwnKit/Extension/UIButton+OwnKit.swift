@@ -9,12 +9,12 @@
 import UIKit
 
 private extension AssociatedKeys {
-    static var hitAreaEdgeInsetsKey = AssociatedKey(UIEdgeInsetsZero)
+    static var hitAreaEdgeInsetsKey = AssociatedKey<UIEdgeInsets>()
 }
 
 public extension UIButton {
     var hitAreaEdgeInsets: UIEdgeInsets {
-        get { return fetchAssociate(.hitAreaEdgeInsetsKey) }
+        get { return fetchAssociate(.hitAreaEdgeInsetsKey, initialValue: UIEdgeInsetsZero) }
         set { storeAssociate(.hitAreaEdgeInsetsKey, value: newValue) }
     }
     

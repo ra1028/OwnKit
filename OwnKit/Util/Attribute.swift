@@ -95,17 +95,24 @@ public enum StringAttributes {
 
 public final class Attribute {
     private var attributes = [(attribute: StringAttributes, range: NSRange?)]()
+    private func copy() -> Attribute {
+        let copy = Attribute()
+        copy.attributes = attributes
+        return copy
+    }
 }
 
 public extension Attribute {
     convenience init(attribute: StringAttributes, range: Range<Int>? = nil) {
         self.init()
-        add(attribute, range: range)
+        let nsRange: NSRange? = range.map { NSRange($0) }
+        attributes.append((attribute: attribute, range: nsRange))
     }
     
     convenience init(attributes: [StringAttributes], range: Range<Int>? = nil) {
         self.init()
-        add(attributes, range: range)
+        let nsRange: NSRange? = range.map { NSRange($0) }
+        self.attributes += attributes.map { ($0, nsRange) }
     }
     
     @warn_unused_result
@@ -128,13 +135,15 @@ public extension Attribute {
     
     func add(attribute: StringAttributes, range: Range<Int>? = nil) -> Attribute {
         let nsRange: NSRange? = range.map { NSRange($0) }
-        attributes.append((attribute: attribute, range: nsRange))
-        return self
+        let copy = self.copy()
+        copy.attributes.append((attribute: attribute, range: nsRange))
+        return copy
     }
     
     func add(attributes: [StringAttributes], range: Range<Int>? = nil) -> Attribute {
         let nsRange: NSRange? = range.map { NSRange($0) }
-        self.attributes += attributes.map { ($0, nsRange) }
-        return self
+        let copy = self.copy()
+        copy.attributes += attributes.map { ($0, nsRange) }
+        return copy
     }
 }

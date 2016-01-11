@@ -9,17 +9,17 @@
 import UIKit
 
 public extension String {
-    var length: Int {
-        return characters.count
-    }
-    
     var isNotEmpty: Bool {
         return !isEmpty
     }
     
+    var length: Int {
+        return characters.count
+    }
+    
     static func classNameOf(aClass: AnyClass) -> String {
         return NSStringFromClass(aClass).separate(".").last!
-    }
+    }        
     
     func range(fromIndex: Int? = nil, toIndex: Int? = nil) -> Range<Index> {
         guard let toIndex = toIndex else {

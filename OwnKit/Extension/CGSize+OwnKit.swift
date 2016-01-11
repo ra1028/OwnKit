@@ -13,3 +13,16 @@ public extension CGSize {
         self.init(width: length, height: length)
     }
 }
+
+extension CGSize: IntegerLiteralConvertible, FloatLiteralConvertible {
+    public typealias IntegerLiteralType = Int
+    public typealias FloatLiteralType = Float
+    
+    public init(integerLiteral value: Int) {
+        self.init(length: CGFloat(value))
+    }
+    
+    public init(floatLiteral value: Float) {
+        self.init(length: CGFloat(value))
+    }
+}

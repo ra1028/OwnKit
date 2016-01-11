@@ -29,6 +29,10 @@ public extension CGAffineTransform {
         return CGAffineTransformMakeScale(x, y)
     }
     
+    static func scale(xy xy: CGFloat = 1) -> CGAffineTransform {
+        return scale(x: xy, y: xy)
+    }
+    
     static func rotation(angle: CGFloat = 0) -> CGAffineTransform {
         return CGAffineTransformMakeRotation(angle)
     }
@@ -43,6 +47,10 @@ public extension CGAffineTransform {
     
     func scale(x x: CGFloat = 1, y: CGFloat = 1) -> CGAffineTransform {
         return CGAffineTransformScale(self, x, y)
+    }
+    
+    func scale(xy xy: CGFloat = 1) -> CGAffineTransform {
+        return scale(x: xy, y: xy)
     }
     
     func rotation(angle angle: CGFloat = 0) -> CGAffineTransform {
