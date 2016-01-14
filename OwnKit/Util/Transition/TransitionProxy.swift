@@ -23,18 +23,35 @@ public final class TransitionProxy: NSObject {
     
     private var animator: TransitionAnimator?
     private weak var destination: UIViewController?
+    private weak var navigationController: UINavigationController?
+    private weak var navigationDelegate: UINavigationControllerDelegate?
     
     public func setTransitionAnimator(animator: TransitionAnimator, destination: UIViewController) {
+        animator.willEndTransion = { [weak self] in
+            self?.removeTransitionAnimator()
+        }
         self.animator = animator
         self.destination = destination
         destination.modalPresentationStyle = .OverFullScreen
         destination.transitioningDelegate = self
     }
     
+    public func setTransitionAnimator(animator: TransitionAnimator, navigationController: UINavigationController) {
+        animator.willEndTransion = { [weak self] in
+            self?.removeTransitionAnimator()
+        }
+        self.animator = animator
+        navigationDelegate = navigationController.delegate
+        self.navigationController = navigationController
+        navigationController.delegate = self
+    }
+    
     public func removeTransitionAnimator() {
         self.destination?.transitioningDelegate = nil
-        self.animator = nil
+        self.navigationController?.delegate = navigationDelegate
         self.destination = nil
+        self.navigationController = nil
+        self.animator = nil
     }
 }
 
@@ -47,5 +64,15 @@ extension TransitionProxy: UIViewControllerTransitioningDelegate {
     public func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         delegate?.proxy(self, didDismissViewController: dismissed)
         return animator?.tweak { $0.type = .Dismiss }
+    }
+}
+
+extension TransitionProxy: UINavigationControllerDelegate {
+    public func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        switch operation {
+        case .Push: return animator?.tweak { $0.type = .Present }
+        case .Pop: return animator?.tweak { $0.type = .Dismiss }
+        default: return nil
+        }
     }
 }

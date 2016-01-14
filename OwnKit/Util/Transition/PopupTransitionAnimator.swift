@@ -15,7 +15,7 @@ public protocol PopupTransitionable: class {
 
 public final class PopupTransitionAnimator: TransitionAnimator {
     public var pushBackEnabled = true
-    public var pushBackScale = 0.9.f
+    public var pushBackScale = 0.95.f
     
     public init(pushBackEnabled: Bool = true, pushBackScale: CGFloat = 0.95) {
         super.init()
@@ -59,6 +59,7 @@ public final class PopupTransitionAnimator: TransitionAnimator {
         super.animateDismissingTransition(transitionContext, from: from, to: to)
         
         guard let popupTransitionable = from as? PopupTransitionable,
+            fromView = from?.view,
             toView = to?.view else {
             assertionFailure("Compliant the PopupTransitionable to source view controller")
             return
@@ -79,6 +80,7 @@ public final class PopupTransitionAnimator: TransitionAnimator {
                 popupView.layer.transform = .translation(y: Measure.screenHeight)
                 toView.layer.transform = .identity
             }, completion: { _ in
+                fromView.removeFromSuperview()
                 transitionContext.completeTransition(true)
             }
         )
