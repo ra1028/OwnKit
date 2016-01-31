@@ -8,12 +8,7 @@
 
 import UIKit
 
-public extension UIViewController {
-    @warn_unused_result
-    static func instantiate() -> Self {
-        return UIStoryboard.instantiate(self)
-    }
-    
+public extension UIViewController {    
     func addChild(viewController: UIViewController, toContainerView: UIView? = nil) {
         addChildViewController(viewController)
         let containerView: UIView = toContainerView ?? view
@@ -21,7 +16,7 @@ public extension UIViewController {
         viewController.view.addFillConstraints()
     }
     
-    func insertChild(viewController: UIViewController, toContainerView: UIView? = nil, atIndex: Int) {
+    func insertChild(viewController: UIViewController, toContainerView: UIView? = nil, atIndex: Int = 0) {
         addChildViewController(viewController)
         let containerView: UIView = toContainerView ?? view
         containerView.insertSubview(viewController.view, atIndex: atIndex)

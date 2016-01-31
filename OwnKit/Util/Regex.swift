@@ -26,6 +26,15 @@ public extension Regex {
         return matchResults(target, options: options, range: range).isNotEmpty
     }
     
+    func firstMatchString(target: String, options: NSMatchingOptions = [], range: Range<Int>? = nil) -> String {
+        if let result = firstMatchResult(target, options: options, range: range),
+        intRange = result.range.toRange() {
+            let range = target.range(intRange.startIndex, toIndex: intRange.endIndex)
+            return target.substringWithRange(range)
+        }
+        return ""
+    }
+    
     func replaceMatches(target: String, toString: String, options: NSMatchingOptions = [], range: Range<Int>? = nil) -> String {
         if let range = range {
             return matcher.stringByReplacingMatchesInString(target, options: options, range: NSRange(range), withTemplate: toString)
@@ -38,12 +47,18 @@ public extension Regex {
         return replaceMatches(target, toString: "", range: range)
     }
     
+    func firstMatchResult(target: String, options: NSMatchingOptions = [], range: Range<Int>? = nil) -> NSTextCheckingResult? {
+        if let range = range {
+            return matcher.firstMatchInString(target, options: options, range: NSRange(range))
+        }
+        return matcher.firstMatchInString(target, options: options, range: NSRange(location: 0, length: target.length))
+    }
+    
     func matchResults(target: String, options: NSMatchingOptions = [], range: Range<Int>? = nil) -> [NSTextCheckingResult] {
         if let range = range {
             return matcher.matchesInString(target, options: options, range: NSRange(range))
-        } else {
-            return matcher.matchesInString(target, options: options, range: NSRange(location: 0, length: target.length))
         }
+        return matcher.matchesInString(target, options: options, range: NSRange(location: 0, length: target.length))
     }
 }
 

@@ -19,7 +19,7 @@ public extension String {
     
     static func classNameOf(aClass: AnyClass) -> String {
         return NSStringFromClass(aClass).separate(".").last!
-    }        
+    }
     
     func range(fromIndex: Int? = nil, toIndex: Int? = nil) -> Range<Index> {
         guard let toIndex = toIndex else {
@@ -29,7 +29,7 @@ public extension String {
     }
     
     func rangeOfString(aString: String) -> Range<Int>? {
-        return Regex(aString)?.matchResults(self).first?.range.toRange()
+        return Regex(aString)?.firstMatchResult(self)?.range.toRange()
     }
     
     func removeSpaces() -> String {
@@ -46,6 +46,10 @@ public extension String {
     
     func trimSpaces() -> String {
         return stringByTrimmingCharactersInSet(.whitespaceAndNewlineCharacterSet())
+    }
+    
+    func firstMatchRegex(regex: String, options: NSMatchingOptions = [], range: Range<Int>? = nil) -> String {
+        return Regex(regex)?.firstMatchString(self, options: options, range: range) ?? ""
     }
     
     func replace(target: String, toString: String, range: Range<Int>? = nil) -> String {

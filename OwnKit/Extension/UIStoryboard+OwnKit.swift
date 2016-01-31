@@ -9,10 +9,8 @@
 import UIKit
 
 public extension UIStoryboard {
-    static func instantiate<T: UIViewController>(type: T.Type) -> T {
-        let className = String.classNameOf(type)
-        let storyboardName = className.remove("ViewController")
-        let storyboard = UIStoryboard(name: storyboardName, bundle: .mainBundle())
+    static func instantiateInitialViewController<T: UIViewController>(name: String, bundle: NSBundle = .mainBundle()) -> T {
+        let storyboard = UIStoryboard(name: name, bundle: bundle)
         return storyboard.instantiateInitialViewController() as! T
     }
 }

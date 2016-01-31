@@ -9,9 +9,8 @@
 import UIKit
 
 public extension UINib {
-    static func instantiate<T: UIView>(type: T.Type, owner: AnyObject? = nil) -> T {
-        let nibName = String.classNameOf(type)
-        let nib = UINib(nibName: nibName, bundle: .mainBundle())
+    static func instantiateFirstView<T: UIView>(name: String, bundle: NSBundle = .mainBundle(), owner: AnyObject? = nil) -> T {
+        let nib = UINib(nibName: name, bundle: bundle)
         return nib.instantiateWithOwner(owner, options: nil).first as! T
     }
     

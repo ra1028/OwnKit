@@ -40,8 +40,11 @@
 		2A828CC61C1A02BC00E6129C /* UIDevice+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A828CC51C1A02BC00E6129C /* UIDevice+OwnKit.swift */; };
 		2A8DEDBD1C3C348B007063BC /* CATransform3D+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8DEDBC1C3C348B007063BC /* CATransform3D+OwnKit.swift */; };
 		2A8DEDBF1C3C39B4007063BC /* CGAffineTransform+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8DEDBE1C3C39B4007063BC /* CGAffineTransform+OwnKit.swift */; };
+		2AA1CEEA1C5E72F600149C04 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA1CEE91C5E72F600149C04 /* Reusable.swift */; };
 		2AA5CCA01C25FE9D0003BB00 /* UIImage+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA5CC9F1C25FE9D0003BB00 /* UIImage+OwnKit.swift */; };
+		2AC3469C1C5E68CE00EE40CD /* Instantiateable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3469B1C5E68CE00EE40CD /* Instantiateable.swift */; };
 		2ACC3C461C194DF300F6EB6F /* UIColor+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC3C451C194DF300F6EB6F /* UIColor+OwnKit.swift */; };
+		2AD630911C5172AD009EE32D /* NSDate+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD630901C5172AD009EE32D /* NSDate+OwnKit.swift */; };
 		2AE46B701C3EF34F0060F862 /* UITableView+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE46B6F1C3EF34F0060F862 /* UITableView+OwnKit.swift */; };
 		2AE9442B1C328FC800731062 /* Tweakable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE9442A1C328FC800731062 /* Tweakable.swift */; };
 /* End PBXBuildFile section */
@@ -82,8 +85,11 @@
 		2A828CC51C1A02BC00E6129C /* UIDevice+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+OwnKit.swift"; sourceTree = "<group>"; };
 		2A8DEDBC1C3C348B007063BC /* CATransform3D+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CATransform3D+OwnKit.swift"; sourceTree = "<group>"; };
 		2A8DEDBE1C3C39B4007063BC /* CGAffineTransform+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGAffineTransform+OwnKit.swift"; sourceTree = "<group>"; };
+		2AA1CEE91C5E72F600149C04 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		2AA5CC9F1C25FE9D0003BB00 /* UIImage+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+OwnKit.swift"; sourceTree = "<group>"; };
+		2AC3469B1C5E68CE00EE40CD /* Instantiateable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instantiateable.swift; sourceTree = "<group>"; };
 		2ACC3C451C194DF300F6EB6F /* UIColor+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+OwnKit.swift"; sourceTree = "<group>"; };
+		2AD630901C5172AD009EE32D /* NSDate+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+OwnKit.swift"; sourceTree = "<group>"; };
 		2AE46B6F1C3EF34F0060F862 /* UITableView+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+OwnKit.swift"; sourceTree = "<group>"; };
 		2AE9442A1C328FC800731062 /* Tweakable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweakable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +171,7 @@
 				2A8DEDBC1C3C348B007063BC /* CATransform3D+OwnKit.swift */,
 				2A8DEDBE1C3C39B4007063BC /* CGAffineTransform+OwnKit.swift */,
 				2AE46B6F1C3EF34F0060F862 /* UITableView+OwnKit.swift */,
+				2AD630901C5172AD009EE32D /* NSDate+OwnKit.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -186,6 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				2AE9442A1C328FC800731062 /* Tweakable.swift */,
+				2AC3469B1C5E68CE00EE40CD /* Instantiateable.swift */,
+				2AA1CEE91C5E72F600149C04 /* Reusable.swift */,
 				2A2C97581C3804C500786715 /* InteractivePoppable.swift */,
 				2A2C3F071C47F2BC007433F9 /* Discardable.swift */,
 			);
@@ -274,6 +283,7 @@
 				2A8DEDBF1C3C39B4007063BC /* CGAffineTransform+OwnKit.swift in Sources */,
 				2A828CB61C19B3A000E6129C /* Range+OwnKit.swift in Sources */,
 				2A828CC41C1A003600E6129C /* Measure.swift in Sources */,
+				2AA1CEEA1C5E72F600149C04 /* Reusable.swift in Sources */,
 				2AA5CCA01C25FE9D0003BB00 /* UIImage+OwnKit.swift in Sources */,
 				2A828CC21C19F4CF00E6129C /* Regex.swift in Sources */,
 				2A2C97591C3804C500786715 /* InteractivePoppable.swift in Sources */,
@@ -281,6 +291,7 @@
 				2A2C975B1C38190000786715 /* UIButton+OwnKit.swift in Sources */,
 				2A828CC61C1A02BC00E6129C /* UIDevice+OwnKit.swift in Sources */,
 				2A3583D01C272CFA000F8870 /* CGSize+OwnKit.swift in Sources */,
+				2AC3469C1C5E68CE00EE40CD /* Instantiateable.swift in Sources */,
 				2A828CC01C19CC0900E6129C /* Index+OwnKit.swift in Sources */,
 				2A41D7701C1B4608001D7E03 /* Attribute.swift in Sources */,
 				2A2C3F0A1C47F902007433F9 /* DiscardBag.swift in Sources */,
@@ -302,6 +313,7 @@
 				2A41D76E1C1B38D2001D7E03 /* CGRect+OwnKit.swift in Sources */,
 				2A3583D61C273DB5000F8870 /* UIScrollView+OwnKit.swift in Sources */,
 				2A2C3F081C47F2BC007433F9 /* Discardable.swift in Sources */,
+				2AD630911C5172AD009EE32D /* NSDate+OwnKit.swift in Sources */,
 				2A8DEDBD1C3C348B007063BC /* CATransform3D+OwnKit.swift in Sources */,
 				2AE9442B1C328FC800731062 /* Tweakable.swift in Sources */,
 				2A6EFA001C305C8B00627A15 /* Global.swift in Sources */,

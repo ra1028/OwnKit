@@ -57,11 +57,6 @@ public extension UIView {
         return frame.maxY
     }
     
-    @warn_unused_result
-    static func instantiate() -> Self {
-        return UINib.instantiate(self)
-    }
-    
     static func animate(
         duration: NSTimeInterval,
         delay: NSTimeInterval = 0,

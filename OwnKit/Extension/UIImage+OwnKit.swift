@@ -20,6 +20,17 @@ public extension UIImage {
         return roundedImage
     }
     
+    func roundedImage(radius: CGFloat, size: CGSize) -> UIImage {
+        let scale = UIScreen.mainScreen().scale
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        let rect = CGRect(size: size)
+        UIBezierPath(roundedRect: rect, cornerRadius: radius).addClip()
+        drawInRect(rect)
+        let roundedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return roundedImage
+    }
+    
     static func stringImage(
         string: String,
         font: UIFont,
