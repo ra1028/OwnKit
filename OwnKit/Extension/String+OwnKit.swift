@@ -52,12 +52,13 @@ public extension String {
         return Regex(regex)?.firstMatchString(self, options: options, range: range) ?? ""
     }
     
-    func replace(target: String, toString: String, range: Range<Int>? = nil) -> String {
-        return stringByReplacingOccurrencesOfString(target, withString: toString, range: self.range(range?.startIndex, toIndex: range?.endIndex))
+    func replace(target: String, toString: String, options: NSStringCompareOptions = [], range: Range<Int>? = nil) -> String {
+        let range = range.map { self.range($0.startIndex, toIndex: $0.endIndex) }
+        return stringByReplacingOccurrencesOfString(target, withString: toString,options: options, range: range)
     }
     
     func replaceRegex(regex: String, toString: String, range: Range<Int>? = nil) -> String {
-        return Regex(regex)?.replaceMatches(self, toString: toString, range: range) ?? self
+        return replace(regex, toString: toString, options: .RegularExpressionSearch, range: range)
     }
     
     func remove(target: String, range: Range<Int>? = nil) -> String {

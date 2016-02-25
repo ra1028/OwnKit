@@ -9,18 +9,8 @@
 import UIKit
 
 public extension UIImage {
-    func roundedImage(radius: CGFloat) -> UIImage {
-        let scale = UIScreen.mainScreen().scale
-        UIGraphicsBeginImageContextWithOptions(size, false, scale)
-        let rect = CGRect(size: size)
-        UIBezierPath(roundedRect: rect, cornerRadius: radius * scale).addClip()
-        drawInRect(rect)
-        let roundedImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return roundedImage
-    }
-    
-    func roundedImage(radius: CGFloat, size: CGSize) -> UIImage {
+    func roundedImage(radius: CGFloat, size: CGSize? = nil) -> UIImage {
+        let size = size ?? self.size
         let scale = UIScreen.mainScreen().scale
         UIGraphicsBeginImageContextWithOptions(size, false, scale)
         let rect = CGRect(size: size)
@@ -29,6 +19,17 @@ public extension UIImage {
         let roundedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return roundedImage
+    }
+    
+    static func colorImage(
+        color: UIColor,
+        size: CGSize) -> UIImage {
+            UIGraphicsBeginImageContextWithOptions(size, false, Measure.screenScale)
+            color.setFill()
+            UIRectFill(CGRect(size: size))
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            return image
     }
     
     static func stringImage(
@@ -43,11 +44,11 @@ public extension UIImage {
             
             let contextSize = size ?? CGSize(length: font.pointSize)
             UIGraphicsBeginImageContextWithOptions(contextSize, false, Measure.screenScale)
-            let drawRect = CGRectMake(
-                (contextSize.width - font.pointSize) / 2,
-                (contextSize.height - font.pointSize) / 2,
-                contextSize.width,
-                contextSize.height
+            let drawRect = CGRect(
+                x: (contextSize.width - font.pointSize) / 2,
+                y: (contextSize.height - font.pointSize) / 2,
+                width: contextSize.width,
+                height: contextSize.height
             )
             attributedString.drawInRect(drawRect)
             let image = UIGraphicsGetImageFromCurrentImageContext()

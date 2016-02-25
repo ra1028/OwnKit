@@ -21,6 +21,10 @@ public extension ObjectAssociatable {
         return AssociatedObjects.fetch(self, key: key, initialValue: initialValue)
     }
     
+    func fetchAssociate<T>(key: AssociatedKey<T>, initialValue: () -> T) -> T {
+        return AssociatedObjects.fetch(self, key: key, initialValue: initialValue)
+    }
+    
     func clearAssociates() {
         AssociatedObjects.clear(self)
     }
@@ -75,6 +79,15 @@ public enum AssociatedObjects {
     }
     
     static func fetch<T>(from: AnyObject, key: AssociatedKey<T>, @autoclosure initialValue: () -> T) -> T {
+        if let object = objc_getAssociatedObject(from, &key.keyValue) as? AssociatedObject<T> {
+            return object.value
+        }
+        let initialValue = initialValue()
+        store(from, key: key, value: initialValue)
+        return initialValue
+    }
+    
+    static func fetch<T>(from: AnyObject, key: AssociatedKey<T>, initialValue: () -> T) -> T {
         if let object = objc_getAssociatedObject(from, &key.keyValue) as? AssociatedObject<T> {
             return object.value
         }

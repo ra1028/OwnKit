@@ -27,7 +27,7 @@ public extension Optional {
     }
     
     func some(@noescape f: Wrapped -> Void) -> Optional {
-        _ = map { f($0) }
+        _ = map(f)
         return self
     }
     

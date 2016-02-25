@@ -8,6 +8,29 @@
 
 import UIKit
 
+infix operator * { associativity left precedence 150 }
+infix operator / { associativity left precedence 150 }
+infix operator *= { associativity left precedence 90 }
+infix operator /= { associativity left precedence 90 }
+
+public func *(lh: CGSize, rh: CGFloat) -> CGSize {
+    return CGSize(width: lh.width * rh, height: lh.height * rh)
+}
+
+public func /(lh: CGSize, rh: CGFloat) -> CGSize {
+    return CGSize(width: lh.width / rh, height: lh.height / rh)
+}
+
+public func *=(var lh: CGSize, rh: CGFloat) {
+    lh.width *= rh
+    lh.height *= rh
+}
+
+public func /=(var lh: CGSize, rh: CGFloat) {
+    lh.width /= rh
+    lh.height /= rh
+}
+
 public extension CGSize {
     init(length: CGFloat) {
         self.init(width: length, height: length)
