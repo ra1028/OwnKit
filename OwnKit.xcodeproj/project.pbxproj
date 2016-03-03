@@ -12,6 +12,7 @@
 		2A03D25D1C35FEFF0030D62D /* PopupTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A03D25C1C35FEFF0030D62D /* PopupTransitionAnimator.swift */; };
 		2A03D25F1C3606AA0030D62D /* TransitionProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A03D25E1C3606AA0030D62D /* TransitionProxy.swift */; };
 		2A14A9F71C31AFB500C4B82C /* UILabel+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A14A9F61C31AFB500C4B82C /* UILabel+OwnKit.swift */; };
+		2A29CF8E1C8807CB00B8D771 /* DynamicDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A29CF8D1C8807CB00B8D771 /* DynamicDefaults.swift */; };
 		2A2A210A1C45716600F0D935 /* PushBackTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A21091C45716600F0D935 /* PushBackTransitionAnimator.swift */; };
 		2A2C3F061C47721F007433F9 /* KeyboardProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2C3F051C47721F007433F9 /* KeyboardProxy.swift */; };
 		2A2C3F081C47F2BC007433F9 /* Discardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2C3F071C47F2BC007433F9 /* Discardable.swift */; };
@@ -38,6 +39,7 @@
 		2A828CC21C19F4CF00E6129C /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A828CC11C19F4CF00E6129C /* Regex.swift */; };
 		2A828CC41C1A003600E6129C /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A828CC31C1A003600E6129C /* Measure.swift */; };
 		2A828CC61C1A02BC00E6129C /* UIDevice+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A828CC51C1A02BC00E6129C /* UIDevice+OwnKit.swift */; };
+		2A8CBC361C825FBD00F59E89 /* SocialShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8CBC351C825FBD00F59E89 /* SocialShare.swift */; };
 		2A8DEDBD1C3C348B007063BC /* CATransform3D+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8DEDBC1C3C348B007063BC /* CATransform3D+OwnKit.swift */; };
 		2A8DEDBF1C3C39B4007063BC /* CGAffineTransform+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8DEDBE1C3C39B4007063BC /* CGAffineTransform+OwnKit.swift */; };
 		2AA1CEEA1C5E72F600149C04 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA1CEE91C5E72F600149C04 /* Reusable.swift */; };
@@ -56,6 +58,7 @@
 		2A03D25C1C35FEFF0030D62D /* PopupTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupTransitionAnimator.swift; sourceTree = "<group>"; };
 		2A03D25E1C3606AA0030D62D /* TransitionProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionProxy.swift; sourceTree = "<group>"; };
 		2A14A9F61C31AFB500C4B82C /* UILabel+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+OwnKit.swift"; sourceTree = "<group>"; };
+		2A29CF8D1C8807CB00B8D771 /* DynamicDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicDefaults.swift; sourceTree = "<group>"; };
 		2A2A21091C45716600F0D935 /* PushBackTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushBackTransitionAnimator.swift; sourceTree = "<group>"; };
 		2A2C3F051C47721F007433F9 /* KeyboardProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardProxy.swift; sourceTree = "<group>"; };
 		2A2C3F071C47F2BC007433F9 /* Discardable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Discardable.swift; sourceTree = "<group>"; };
@@ -84,6 +87,7 @@
 		2A828CC11C19F4CF00E6129C /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		2A828CC31C1A003600E6129C /* Measure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
 		2A828CC51C1A02BC00E6129C /* UIDevice+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+OwnKit.swift"; sourceTree = "<group>"; };
+		2A8CBC351C825FBD00F59E89 /* SocialShare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialShare.swift; sourceTree = "<group>"; };
 		2A8DEDBC1C3C348B007063BC /* CATransform3D+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CATransform3D+OwnKit.swift"; sourceTree = "<group>"; };
 		2A8DEDBE1C3C39B4007063BC /* CGAffineTransform+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGAffineTransform+OwnKit.swift"; sourceTree = "<group>"; };
 		2AA1CEE91C5E72F600149C04 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
@@ -188,6 +192,8 @@
 				2A41D76F1C1B4608001D7E03 /* Attribute.swift */,
 				2A6EF9FF1C305C8B00627A15 /* Global.swift */,
 				2A2C3F051C47721F007433F9 /* KeyboardProxy.swift */,
+				2A8CBC351C825FBD00F59E89 /* SocialShare.swift */,
+				2A29CF8D1C8807CB00B8D771 /* DynamicDefaults.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -282,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A29CF8E1C8807CB00B8D771 /* DynamicDefaults.swift in Sources */,
 				2A71E3721C13AEFF00EBF954 /* UIViewController+OwnKit.swift in Sources */,
 				2A8DEDBF1C3C39B4007063BC /* CGAffineTransform+OwnKit.swift in Sources */,
 				2A828CB61C19B3A000E6129C /* Range+OwnKit.swift in Sources */,
@@ -319,6 +326,7 @@
 				2AD630911C5172AD009EE32D /* NSDate+OwnKit.swift in Sources */,
 				2A8DEDBD1C3C348B007063BC /* CATransform3D+OwnKit.swift in Sources */,
 				2AE9442B1C328FC800731062 /* Tweakable.swift in Sources */,
+				2A8CBC361C825FBD00F59E89 /* SocialShare.swift in Sources */,
 				2A6EFA001C305C8B00627A15 /* Global.swift in Sources */,
 				2ACC1BEE1C79D883004D9A87 /* SequenceType+OwnKit.swift in Sources */,
 				2A03D25B1C35FEE70030D62D /* TransitionAnimator.swift in Sources */,

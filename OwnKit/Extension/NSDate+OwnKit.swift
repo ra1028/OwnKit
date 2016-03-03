@@ -22,4 +22,12 @@ public extension NSDate {
         formatter.dateFormat = format
         return formatter.stringFromDate(self)
     }
+    
+    func mediumStyleNoTime(locale: NSLocale = NSLocale(localeIdentifier: "en_US_POSIX")) -> String {
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = .MediumStyle
+        formatter.timeStyle = .NoStyle
+        formatter.locale = locale
+        return formatter.stringFromDate(self)
+    }
 }

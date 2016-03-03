@@ -77,13 +77,13 @@ public extension UITableView {
 }
 
 public extension UICollectionView {
-    func registerCell<T: UITableViewCell>(ofClass: T.Type, subIdentifier: String = "") -> Self {
+    func registerCell<T: UICollectionViewCell>(ofClass: T.Type, subIdentifier: String = "") -> Self {
         let identifier = .classNameOf(T.self) + subIdentifier
         registerClass(ofClass, forCellWithReuseIdentifier: identifier)
         return self
     }
     
-    func registerCell<T: UITableViewCell where T: NibReusable>(ofClass: T.Type, subIdentifier: String = "") -> Self {
+    func registerCell<T: UICollectionViewCell where T: NibReusable>(ofClass: T.Type, subIdentifier: String = "") -> Self {
         let identifier = .classNameOf(T.self) + subIdentifier
         let nibName = T.nibName
         if UINib.isNibExist(nibName) {
@@ -94,44 +94,44 @@ public extension UICollectionView {
         return self
     }
     
-    func registerHeaderView<T: UITableViewHeaderFooterView>(ofClass: T.Type, subIdentifier: String = "") -> Self {
+    func registerHeaderView<T: UICollectionReusableView>(ofClass: T.Type, subIdentifier: String = "") -> Self {
         return registerView(ofClass, kind: UICollectionElementKindSectionHeader, subIdentifier: subIdentifier)
     }
     
-    func registerFooterView<T: UITableViewHeaderFooterView>(ofClass: T.Type, subIdentifier: String = "") -> Self {
+    func registerFooterView<T: UICollectionReusableView>(ofClass: T.Type, subIdentifier: String = "") -> Self {
         return registerView(ofClass, kind: UICollectionElementKindSectionFooter, subIdentifier: subIdentifier)
     }
     
-    func registerHeaderView<T: UITableViewHeaderFooterView where T: NibReusable>(ofClass: T.Type, subIdentifier: String = "") -> Self {
+    func registerHeaderView<T: UICollectionReusableView where T: NibReusable>(ofClass: T.Type, subIdentifier: String = "") -> Self {
         return registerView(ofClass, kind: UICollectionElementKindSectionHeader, subIdentifier: subIdentifier)
     }
     
-    func registerFooterView<T: UITableViewHeaderFooterView where T: NibReusable>(ofClass: T.Type, subIdentifier: String = "") -> Self {
+    func registerFooterView<T: UICollectionReusableView where T: NibReusable>(ofClass: T.Type, subIdentifier: String = "") -> Self {
         return registerView(ofClass, kind: UICollectionElementKindSectionFooter, subIdentifier: subIdentifier)
     }
     
-    func dequeueCell<T: UITableViewCell>(ofClass: T.Type = T.self, subIdentifier: String = "", indexPath: NSIndexPath) -> T {
+    func dequeueCell<T: UICollectionViewCell>(ofClass: T.Type = T.self, subIdentifier: String = "", indexPath: NSIndexPath) -> T {
         let identifier = .classNameOf(T.self) + subIdentifier
         return dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! T
     }
     
-    func dequeueHeaderView<T: UITableViewHeaderFooterView>(ofClass: T.Type = T.self,subIdentifier: String = "", indexPath: NSIndexPath) -> T {
+    func dequeueHeaderView<T: UICollectionReusableView>(ofClass: T.Type = T.self,subIdentifier: String = "", indexPath: NSIndexPath) -> T {
         return dequeueView(ofClass, kind: UICollectionElementKindSectionHeader, subIdentifier: subIdentifier, indexPath: indexPath)
     }
     
-    func dequeueFooterView<T: UITableViewHeaderFooterView>(ofClass: T.Type = T.self,subIdentifier: String = "", indexPath: NSIndexPath) -> T {
+    func dequeueFooterView<T: UICollectionReusableView>(ofClass: T.Type = T.self,subIdentifier: String = "", indexPath: NSIndexPath) -> T {
         return dequeueView(ofClass, kind: UICollectionElementKindSectionFooter, subIdentifier: subIdentifier, indexPath: indexPath)
     }
 }
 
 private extension UICollectionView {
-    func registerView<T: UITableViewHeaderFooterView>(ofClass: T.Type, kind: String, subIdentifier: String = "") -> Self {
+    func registerView<T: UICollectionReusableView>(ofClass: T.Type, kind: String, subIdentifier: String = "") -> Self {
         let identifier = .classNameOf(T.self) + subIdentifier
         registerClass(ofClass, forSupplementaryViewOfKind: kind, withReuseIdentifier: identifier)
         return self
     }
     
-    func registerView<T: UITableViewHeaderFooterView where T: NibReusable>(ofClass: T.Type, kind: String, subIdentifier: String = "") -> Self {
+    func registerView<T: UICollectionReusableView where T: NibReusable>(ofClass: T.Type, kind: String, subIdentifier: String = "") -> Self {
         let identifier = .classNameOf(T.self) + subIdentifier
         let nibName = T.nibName
         if UINib.isNibExist(nibName) {
@@ -142,7 +142,7 @@ private extension UICollectionView {
         return self
     }
     
-    func dequeueView<T: UITableViewHeaderFooterView>(ofClass: T.Type = T.self, kind: String, subIdentifier: String = "", indexPath: NSIndexPath) -> T {
+    func dequeueView<T: UICollectionReusableView>(ofClass: T.Type = T.self, kind: String, subIdentifier: String = "", indexPath: NSIndexPath) -> T {
         let identifier = .classNameOf(T.self) + subIdentifier        
         return dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: identifier, forIndexPath: indexPath) as! T
     }
