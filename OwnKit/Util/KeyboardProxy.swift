@@ -182,20 +182,20 @@ private extension KeyboardProxy {
         KeyboardEventType.notificationNames.forEach {
             NSNotificationCenter.defaultCenter().addObserver(
                 self,
-                selector: "observeKeyboardEvent:",
+                selector: #selector(KeyboardProxy.observeKeyboardEvent(_:)),
                 name: $0,
                 object: nil
             )
         }
         NSNotificationCenter.defaultCenter().addObserver(
             self,
-            selector: "observeAppEvent:",
+            selector: #selector(KeyboardProxy.observeAppEvent(_:)),
             name: UIApplicationWillResignActiveNotification,
             object: nil
         )
         NSNotificationCenter.defaultCenter().addObserver(
             self,
-            selector: "observeAppEvent:",
+            selector: #selector(KeyboardProxy.observeAppEvent(_:)),
             name: UIApplicationDidBecomeActiveNotification,
             object: nil
         )

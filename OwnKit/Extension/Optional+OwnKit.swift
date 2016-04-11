@@ -7,7 +7,7 @@
 //
 
 public protocol OptionalType {
-    typealias T
+    associatedtype T
     var optionalValue: T? { get }
 }
 

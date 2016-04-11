@@ -43,9 +43,9 @@ private extension DynamicDefaults {
     }
     
     func registerDefaults() {
-        let dic = propertyNames.reduce([String:AnyObject]()) { (var dic, key) -> [String:AnyObject] in
-            dic[storeKey(key)] = valueForKey(key)
-            return dic
+        var dic = [String: AnyObject]()
+        propertyNames.forEach {
+            dic[storeKey($0)] = valueForKey($0)
         }
         userDefaults.registerDefaults(dic)
     }

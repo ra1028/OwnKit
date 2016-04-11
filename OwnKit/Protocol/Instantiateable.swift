@@ -9,18 +9,18 @@
 import UIKit
 
 public protocol Instantiateable: class {
-    static var nibName: String { get }
-    static var nibBundle: NSBundle { get }
+    static var nibFileName: String { get }
+    static var nibFilBundle: NSBundle { get }
 }
 
 public extension Instantiateable where Self: UIViewController {
-    static var nibBundle: NSBundle {
+    static var nibFilBundle: NSBundle {
         return .mainBundle()
     }
     
     @warn_unused_result
     static func instantiate() -> Self {
-        return UIStoryboard.instantiateInitialViewController(nibName, bundle: nibBundle)
+        return UIStoryboard.instantiateInitialViewController(nibFileName, bundle: nibFilBundle)
     }
 }
 
@@ -31,6 +31,6 @@ public extension Instantiateable where Self: UIView {
     
     @warn_unused_result
     static func instantiate() -> Self {
-        return UINib.instantiateFirstView(nibName, bundle: nibBundle)
+        return UINib.instantiateFirstView(nibFileName, bundle: nibFilBundle)
     }
 }
