@@ -15,6 +15,10 @@ public extension Measure {
         return UIApplication.sharedApplication().statusBarFrame.height
     }
     
+    static var screenBounds: CGRect {
+        return UIScreen.mainScreen().bounds
+    }
+    
     static var screenScale: CGFloat {
         return UIScreen.mainScreen().scale
     }
