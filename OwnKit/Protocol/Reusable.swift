@@ -9,18 +9,18 @@
 import UIKit
 
 public protocol NibReusable {
-    static var nibName: String { get }
-    static var nibBundle: NSBundle { get }
+    static var nibFileName: String { get }
+    static var nibFileBundle: NSBundle { get }
 }
 
 public extension NibReusable where Self: UITableViewCell {
-    static var nibBundle: NSBundle {
+    static var nibFileBundle: NSBundle {
         return .mainBundle()
     }
 }
 
 public extension NibReusable where Self: UICollectionViewCell {
-    static var nibBundle: NSBundle {
+    static var nibFileBundle: NSBundle {
         return .mainBundle()
     }
 }
@@ -34,9 +34,9 @@ public extension UITableView {
     
     func registerCell<T: UITableViewCell where T: NibReusable>(ofClass: T.Type, subIdentifier: String = "") -> Self {
         let identifier = .classNameOf(T.self) + subIdentifier
-        let nibName = T.nibName
+        let nibName = T.nibFileName
         if UINib.isNibExist(nibName) {
-            registerNib(UINib(nibName: nibName, bundle: T.nibBundle), forCellReuseIdentifier: identifier)
+            registerNib(UINib(nibName: nibName, bundle: T.nibFileBundle), forCellReuseIdentifier: identifier)
         } else {
             registerClass(ofClass, forCellReuseIdentifier: identifier)
         }
@@ -51,9 +51,9 @@ public extension UITableView {
     
     func registerView<T: UITableViewHeaderFooterView where T: NibReusable>(ofClass: T.Type, subIdentifier: String = "") -> Self {
         let identifier = .classNameOf(T.self) + subIdentifier
-        let nibName = T.nibName
+        let nibName = T.nibFileName
         if UINib.isNibExist(nibName) {
-            registerNib(UINib(nibName: nibName, bundle: T.nibBundle), forHeaderFooterViewReuseIdentifier: identifier)
+            registerNib(UINib(nibName: nibName, bundle: T.nibFileBundle), forHeaderFooterViewReuseIdentifier: identifier)
         } else {
             registerClass(ofClass, forHeaderFooterViewReuseIdentifier: identifier)
         }
@@ -85,9 +85,9 @@ public extension UICollectionView {
     
     func registerCell<T: UICollectionViewCell where T: NibReusable>(ofClass: T.Type, subIdentifier: String = "") -> Self {
         let identifier = .classNameOf(T.self) + subIdentifier
-        let nibName = T.nibName
+        let nibName = T.nibFileName
         if UINib.isNibExist(nibName) {
-            registerNib(UINib(nibName: nibName, bundle: T.nibBundle), forCellWithReuseIdentifier: identifier)
+            registerNib(UINib(nibName: nibName, bundle: T.nibFileBundle), forCellWithReuseIdentifier: identifier)
         } else {
             registerClass(ofClass, forCellWithReuseIdentifier: identifier)
         }
@@ -133,9 +133,9 @@ private extension UICollectionView {
     
     func registerView<T: UICollectionReusableView where T: NibReusable>(ofClass: T.Type, kind: String, subIdentifier: String = "") -> Self {
         let identifier = .classNameOf(T.self) + subIdentifier
-        let nibName = T.nibName
+        let nibName = T.nibFileName
         if UINib.isNibExist(nibName) {
-            registerNib(UINib(nibName: nibName, bundle: T.nibBundle), forSupplementaryViewOfKind: kind, withReuseIdentifier: identifier)
+            registerNib(UINib(nibName: nibName, bundle: T.nibFileBundle), forSupplementaryViewOfKind: kind, withReuseIdentifier: identifier)
         } else {
             registerClass(ofClass, forSupplementaryViewOfKind: kind, withReuseIdentifier: identifier)
         }

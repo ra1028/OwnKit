@@ -103,13 +103,13 @@ public final class Attribute {
 }
 
 public extension Attribute {
-    convenience init(attribute: StringAttributes, range: Range<Int>? = nil) {
+    convenience init(_ attribute: StringAttributes, range: Range<Int>? = nil) {
         self.init()
         let nsRange: NSRange? = range.map { NSRange($0) }
         attributes.append((attribute: attribute, range: nsRange))
     }
     
-    convenience init(attributes: [StringAttributes], range: Range<Int>? = nil) {
+    convenience init(_ attributes: [StringAttributes], range: Range<Int>? = nil) {
         self.init()
         let nsRange: NSRange? = range.map { NSRange($0) }
         self.attributes += attributes.map { ($0, nsRange) }

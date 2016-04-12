@@ -37,7 +37,7 @@ public extension UIImage {
         font: UIFont,
         color: UIColor,
         size: CGSize? = nil) -> UIImage {
-            let attributedString = Attribute(attribute: .Font(font))
+            let attributedString = Attribute(.Font(font))
                 .add(.Color(color))
                 .add(.Alignment(.Center))
                 .string(string)
