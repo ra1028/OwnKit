@@ -13,12 +13,17 @@ private extension AssociatedKeys {
 }
 
 public extension UITableView {
-    var shouldCancelContentTouches: Bool {
+    public var shouldCancelContentTouches: Bool {
         get { return fetchAssociate(.shouldCancelContentTouchesKey, initialValue: false) }
         set { storeAssociate(.shouldCancelContentTouchesKey, value: newValue) }
     }    
     
     public override func touchesShouldCancelInContentView(view: UIView) -> Bool {
         return shouldCancelContentTouches ? true : super.touchesShouldCancelInContentView(view)
+    }
+    
+    public func deselectSelectedRow() {
+        guard let indexPath = indexPathForSelectedRow else { return }
+        deselectRowAtIndexPath(indexPath, animated: true)
     }
 }

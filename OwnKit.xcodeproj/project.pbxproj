@@ -44,6 +44,8 @@
 		2A8DEDBF1C3C39B4007063BC /* CGAffineTransform+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8DEDBE1C3C39B4007063BC /* CGAffineTransform+OwnKit.swift */; };
 		2AA1CEEA1C5E72F600149C04 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA1CEE91C5E72F600149C04 /* Reusable.swift */; };
 		2AA5CCA01C25FE9D0003BB00 /* UIImage+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA5CC9F1C25FE9D0003BB00 /* UIImage+OwnKit.swift */; };
+		2ABCE5251CBEB2A700A277E1 /* UINavigationItem+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABCE5241CBEB2A700A277E1 /* UINavigationItem+OwnKit.swift */; };
+		2ABCE5271CBEB43F00A277E1 /* UIBarButtonItem+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABCE5261CBEB43F00A277E1 /* UIBarButtonItem+OwnKit.swift */; };
 		2AC3469C1C5E68CE00EE40CD /* Instantiateable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3469B1C5E68CE00EE40CD /* Instantiateable.swift */; };
 		2ACC1BEE1C79D883004D9A87 /* SequenceType+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC1BED1C79D883004D9A87 /* SequenceType+OwnKit.swift */; };
 		2ACC3C461C194DF300F6EB6F /* UIColor+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC3C451C194DF300F6EB6F /* UIColor+OwnKit.swift */; };
@@ -92,6 +94,8 @@
 		2A8DEDBE1C3C39B4007063BC /* CGAffineTransform+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGAffineTransform+OwnKit.swift"; sourceTree = "<group>"; };
 		2AA1CEE91C5E72F600149C04 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		2AA5CC9F1C25FE9D0003BB00 /* UIImage+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+OwnKit.swift"; sourceTree = "<group>"; };
+		2ABCE5241CBEB2A700A277E1 /* UINavigationItem+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationItem+OwnKit.swift"; sourceTree = "<group>"; };
+		2ABCE5261CBEB43F00A277E1 /* UIBarButtonItem+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+OwnKit.swift"; sourceTree = "<group>"; };
 		2AC3469B1C5E68CE00EE40CD /* Instantiateable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instantiateable.swift; sourceTree = "<group>"; };
 		2ACC1BED1C79D883004D9A87 /* SequenceType+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SequenceType+OwnKit.swift"; sourceTree = "<group>"; };
 		2ACC3C451C194DF300F6EB6F /* UIColor+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+OwnKit.swift"; sourceTree = "<group>"; };
@@ -179,6 +183,8 @@
 				2AE46B6F1C3EF34F0060F862 /* UITableView+OwnKit.swift */,
 				2AD630901C5172AD009EE32D /* NSDate+OwnKit.swift */,
 				2ACC1BED1C79D883004D9A87 /* SequenceType+OwnKit.swift */,
+				2ABCE5241CBEB2A700A277E1 /* UINavigationItem+OwnKit.swift */,
+				2ABCE5261CBEB43F00A277E1 /* UIBarButtonItem+OwnKit.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -288,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ABCE5251CBEB2A700A277E1 /* UINavigationItem+OwnKit.swift in Sources */,
 				2A29CF8E1C8807CB00B8D771 /* DynamicDefaults.swift in Sources */,
 				2A71E3721C13AEFF00EBF954 /* UIViewController+OwnKit.swift in Sources */,
 				2A8DEDBF1C3C39B4007063BC /* CGAffineTransform+OwnKit.swift in Sources */,
@@ -306,6 +313,7 @@
 				2A41D7701C1B4608001D7E03 /* Attribute.swift in Sources */,
 				2A2C3F0A1C47F902007433F9 /* DiscardBag.swift in Sources */,
 				2A03D25F1C3606AA0030D62D /* TransitionProxy.swift in Sources */,
+				2ABCE5271CBEB43F00A277E1 /* UIBarButtonItem+OwnKit.swift in Sources */,
 				2A71E36E1C13AEFF00EBF954 /* String+OwnKit.swift in Sources */,
 				2A2C3F061C47721F007433F9 /* KeyboardProxy.swift in Sources */,
 				2A71E3701C13AEFF00EBF954 /* UIStoryboard+OwnKit.swift in Sources */,

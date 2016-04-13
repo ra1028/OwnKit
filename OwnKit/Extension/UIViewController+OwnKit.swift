@@ -18,7 +18,7 @@ public extension UIViewController {
     
     func insertChild(viewController: UIViewController, toContainerView: UIView? = nil, atIndex: Int = 0) {
         addChildViewController(viewController)
-        let containerView: UIView = toContainerView ?? view
+        let containerView = toContainerView ?? view!
         containerView.insertSubview(viewController.view, atIndex: atIndex)
         viewController.view.addFillConstraints()
     }
