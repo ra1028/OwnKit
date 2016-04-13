@@ -20,12 +20,12 @@ public extension KeyboardObservationControllable {
 }
 
 public struct KeyboardInfo {
-    let beginFrame: CGRect
-    let endFrame: CGRect
-    let animationDuration: NSTimeInterval
-    let animationCurve: UIViewAnimationOptions
+    public let beginFrame: CGRect
+    public let endFrame: CGRect
+    public let animationDuration: NSTimeInterval
+    public let animationCurve: UIViewAnimationOptions
     
-    init?(notification: NSNotification) {
+    private init?(notification: NSNotification) {
         guard let userInfo = notification.userInfo else { return nil }
         guard let beginFrame = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue(),
         endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue(),
