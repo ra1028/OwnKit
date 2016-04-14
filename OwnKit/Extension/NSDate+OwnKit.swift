@@ -17,6 +17,18 @@ public extension NSDate {
         return formatter.dateFromString(dateString)
     }
     
+    static func date(
+        dateString: String,
+        format: String,
+        locale: NSLocale = NSLocale(localeIdentifier: "en_US_POSIX"),
+        timeZone: NSTimeZone = .localTimeZone()) -> NSDate? {
+        let formatter = NSDateFormatter()
+        formatter.locale = locale
+        formatter.timeZone = timeZone
+        formatter.dateFormat = format
+        return formatter.dateFromString(dateString)
+    }
+    
     func string(format: String) -> String {
         let formatter = NSDateFormatter()
         formatter.dateFormat = format
