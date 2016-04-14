@@ -52,6 +52,7 @@
 		2AD630911C5172AD009EE32D /* NSDate+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD630901C5172AD009EE32D /* NSDate+OwnKit.swift */; };
 		2AE46B701C3EF34F0060F862 /* UITableView+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE46B6F1C3EF34F0060F862 /* UITableView+OwnKit.swift */; };
 		2AE9442B1C328FC800731062 /* Tweakable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE9442A1C328FC800731062 /* Tweakable.swift */; };
+		6B786CC91CBF4FCC00B4AF12 /* UINavigationController+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B786CC81CBF4FCC00B4AF12 /* UINavigationController+OwnKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,7 @@
 		2AD630901C5172AD009EE32D /* NSDate+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+OwnKit.swift"; sourceTree = "<group>"; };
 		2AE46B6F1C3EF34F0060F862 /* UITableView+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+OwnKit.swift"; sourceTree = "<group>"; };
 		2AE9442A1C328FC800731062 /* Tweakable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweakable.swift; sourceTree = "<group>"; };
+		6B786CC81CBF4FCC00B4AF12 /* UINavigationController+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+OwnKit.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 				2ACC1BED1C79D883004D9A87 /* SequenceType+OwnKit.swift */,
 				2ABCE5241CBEB2A700A277E1 /* UINavigationItem+OwnKit.swift */,
 				2ABCE5261CBEB43F00A277E1 /* UIBarButtonItem+OwnKit.swift */,
+				6B786CC81CBF4FCC00B4AF12 /* UINavigationController+OwnKit.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				2A2C3F081C47F2BC007433F9 /* Discardable.swift in Sources */,
 				2AD630911C5172AD009EE32D /* NSDate+OwnKit.swift in Sources */,
 				2A8DEDBD1C3C348B007063BC /* CATransform3D+OwnKit.swift in Sources */,
+				6B786CC91CBF4FCC00B4AF12 /* UINavigationController+OwnKit.swift in Sources */,
 				2AE9442B1C328FC800731062 /* Tweakable.swift in Sources */,
 				2A8CBC361C825FBD00F59E89 /* SocialShare.swift in Sources */,
 				2A6EFA001C305C8B00627A15 /* Global.swift in Sources */,

@@ -8,7 +8,11 @@
 
 import UIKit
 
-public extension UIViewController {    
+public extension UIViewController {
+    func present(viewController: UIViewController, animated: Bool = true, completion: (() -> Void)? = nil) {
+        presentViewController(viewController, animated: animated, completion: completion)
+    }
+    
     func addChild(viewController: UIViewController, toContainerView: UIView? = nil) {
         addChildViewController(viewController)
         let containerView: UIView = toContainerView ?? view
