@@ -53,6 +53,7 @@
 		2AE46B701C3EF34F0060F862 /* UITableView+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE46B6F1C3EF34F0060F862 /* UITableView+OwnKit.swift */; };
 		2AE9442B1C328FC800731062 /* Tweakable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE9442A1C328FC800731062 /* Tweakable.swift */; };
 		6B786CC91CBF4FCC00B4AF12 /* UINavigationController+OwnKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B786CC81CBF4FCC00B4AF12 /* UINavigationController+OwnKit.swift */; };
+		6B786CF31CC478D100B4AF12 /* AnimationChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B786CF21CC478D100B4AF12 /* AnimationChain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,7 @@
 		2AE46B6F1C3EF34F0060F862 /* UITableView+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+OwnKit.swift"; sourceTree = "<group>"; };
 		2AE9442A1C328FC800731062 /* Tweakable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweakable.swift; sourceTree = "<group>"; };
 		6B786CC81CBF4FCC00B4AF12 /* UINavigationController+OwnKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+OwnKit.swift"; sourceTree = "<group>"; };
+		6B786CF21CC478D100B4AF12 /* AnimationChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationChain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 				2A2C3F051C47721F007433F9 /* KeyboardProxy.swift */,
 				2A8CBC351C825FBD00F59E89 /* SocialShare.swift */,
 				2A29CF8D1C8807CB00B8D771 /* DynamicDefaults.swift */,
+				6B786CF21CC478D100B4AF12 /* AnimationChain.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				2AA5CCA01C25FE9D0003BB00 /* UIImage+OwnKit.swift in Sources */,
 				2A828CC21C19F4CF00E6129C /* Regex.swift in Sources */,
 				2A2C97591C3804C500786715 /* InteractivePoppable.swift in Sources */,
+				6B786CF31CC478D100B4AF12 /* AnimationChain.swift in Sources */,
 				2AE46B701C3EF34F0060F862 /* UITableView+OwnKit.swift in Sources */,
 				2A2C975B1C38190000786715 /* UIButton+OwnKit.swift in Sources */,
 				2A828CC61C1A02BC00E6129C /* UIDevice+OwnKit.swift in Sources */,
