@@ -94,7 +94,7 @@ public enum StringAttributes {
 }
 
 public final class Attribute {
-    private var stringAttributes = [(attribute: StringAttributes, range: NSRange?)]()
+    private var stringAttributes = [StringAttributes]()
     private func copy() -> Attribute {
         let copy = Attribute()
         copy.stringAttributes = stringAttributes
@@ -103,16 +103,20 @@ public final class Attribute {
 }
 
 public extension Attribute {
-    convenience init(_ attribute: StringAttributes, range: Range<Int>? = nil) {
-        self.init()
-        let nsRange: NSRange? = range.map { NSRange($0) }
-        stringAttributes.append((attribute: attribute, range: nsRange))
+    var attributes: [String: AnyObject] {
+        var attributes = [String: AnyObject]()
+        stringAttributes.forEach { attributes[$0.name] = $0.value }
+        return attributes
     }
     
-    convenience init(_ attributes: [StringAttributes], range: Range<Int>? = nil) {
+    convenience init(_ attribute: StringAttributes) {
         self.init()
-        let nsRange: NSRange? = range.map { NSRange($0) }
-        self.stringAttributes += attributes.map { ($0, nsRange) }
+        stringAttributes.append(attribute)
+    }
+    
+    convenience init(_ attributes: [StringAttributes]) {
+        self.init()
+        self.stringAttributes += attributes
     }
     
     @warn_unused_result
@@ -122,36 +126,18 @@ public extension Attribute {
     
     @warn_unused_result
     func mutableString(string: String) -> NSMutableAttributedString {
-        let attributedString = NSMutableAttributedString(string: string)
-        stringAttributes.forEach { attribute, range in
-            attributedString.addAttribute(
-                attribute.name,
-                value: attribute.value,
-                range: range ?? NSRange(location: 0, length: string.length)
-            )
-        }
-        return attributedString
+        return NSMutableAttributedString(string: string, attributes: attributes)
     }
     
-    var attributes: [String: AnyObject] {
-        var attributes = [String: AnyObject]()
-        stringAttributes.forEach {
-            attributes[$0.attribute.name] = $0.attribute.value
-        }
-        return attributes
-    }
-    
-    func add(attribute: StringAttributes, range: Range<Int>? = nil) -> Attribute {
-        let nsRange: NSRange? = range.map { NSRange($0) }
+    func add(attribute: StringAttributes) -> Attribute {
         let copy = self.copy()
-        copy.stringAttributes.append((attribute: attribute, range: nsRange))
+        copy.stringAttributes.append(attribute)
         return copy
     }
     
-    func add(attributes: [StringAttributes], range: Range<Int>? = nil) -> Attribute {
-        let nsRange: NSRange? = range.map { NSRange($0) }
+    func add(attributes: [StringAttributes]) -> Attribute {
         let copy = self.copy()
-        copy.stringAttributes += attributes.map { ($0, nsRange) }
+        copy.stringAttributes += attributes
         return copy
     }
 }
