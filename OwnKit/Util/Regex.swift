@@ -26,13 +26,13 @@ public extension Regex {
         return matchResults(target, options: options, range: range).isNotEmpty
     }
     
-    func firstMatchString(target: String, options: NSMatchingOptions = [], range: Range<Int>? = nil) -> String {
-        if let result = firstMatchResult(target, options: options, range: range),
-        intRange = result.range.toRange() {
-            let range = target.range(intRange.startIndex, toIndex: intRange.endIndex)
-            return target.substringWithRange(range)
+    func firstMatchString(target: String, options: NSMatchingOptions = [], range: Range<Int>? = nil) -> String? {
+        return firstMatchResult(target, options: options, range: range).flatMap {
+            $0.range.toRange().map {
+                let range = target.range($0.startIndex, toIndex: $0.endIndex)
+                return target.substringWithRange(range)
+            }
         }
-        return ""
     }
     
     func replaceMatches(target: String, toString: String, options: NSMatchingOptions = [], range: Range<Int>? = nil) -> String {
