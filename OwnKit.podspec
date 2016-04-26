@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "OwnKit"
-  spec.version      = "0.2.8"
+  spec.version      = "0.2.9"
   spec.author       = { "ra1028" => "r.fe51028.r@gmail.com" }
   spec.homepage     = "https://github.com/ra1028"
   spec.summary      = "My own utility toolkit for ios"

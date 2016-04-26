@@ -12,4 +12,8 @@ public extension UINavigationController {
     func push(viewController: UIViewController, animated: Bool = true) {
         pushViewController(viewController, animated: animated)
     }
+    
+    func pop(animated: Bool = true) {
+        popViewControllerAnimated(animated)        
+    }
 }

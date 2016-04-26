@@ -13,6 +13,10 @@ public extension UIViewController {
         presentViewController(viewController, animated: animated, completion: completion)
     }
     
+    func dismiss(animated: Bool = true, completion: (() -> Void)? = nil) {
+        dismissViewControllerAnimated(animated, completion: completion)
+    }
+    
     func addChild(viewController: UIViewController, toContainerView: UIView? = nil) {
         addChildViewController(viewController)
         let containerView: UIView = toContainerView ?? view
