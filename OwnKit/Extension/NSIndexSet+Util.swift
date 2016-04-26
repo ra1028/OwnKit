@@ -9,8 +9,8 @@
 import Foundation
 
 public extension NSIndexSet {
-    convenience init(index: Int...) {
-        self.init(indexes: index)
+    convenience init(indexes: Int...) {
+        self.init(indexes: indexes)
     }
     
     convenience init(indexes: [Int]) {
