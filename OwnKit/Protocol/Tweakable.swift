@@ -17,7 +17,3 @@ public extension Tweakable {
 }
 
 extension NSObject: Tweakable {}
-
-// for Xcode7.3.1 compiler bugs
-extension UIView: Tweakable {}
-extension UIViewController: Tweakable {}

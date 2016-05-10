@@ -11,9 +11,11 @@ import UIKit
 public final class PushBackTransitionAnimator: TransitionAnimator {
     public var pushBackScale = 0.95.f    
     
-    private let backgroundView = UIView().tweak {
-        $0.backgroundColor = UIColor.blackColor().alphaColor(0.7)
-    }
+    private let backgroundView: UIView = {
+        let v = UIView()
+        v.backgroundColor = UIColor.blackColor().alphaColor(0.7)
+        return v
+    }()
     
     public init(pushBackScale: CGFloat = 0.95) {
         super.init()

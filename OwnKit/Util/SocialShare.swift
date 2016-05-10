@@ -25,12 +25,12 @@ public struct Share {
             return SLComposeViewController.isAvailableForServiceType(serviceType)
         }
         
-        public func composeViewController(text text: String? = nil, image: UIImage? = nil, url: NSURL? = nil) -> SLComposeViewController {            
-            return SLComposeViewController(forServiceType: serviceType).tweak { vc in
-                text.some { vc.setInitialText($0) }
-                image.some { vc.addImage($0) }
-                url.some { vc.addURL($0) }
-            }
+        public func composeViewController(text text: String? = nil, image: UIImage? = nil, url: NSURL? = nil) -> SLComposeViewController {
+            let vc = SLComposeViewController(forServiceType: serviceType)
+            text.some { vc.setInitialText($0) }
+            image.some { vc.addImage($0) }
+            url.some { vc.addURL($0) }
+            return vc
         }
         
         public func present(inViewController: UIViewController, text: String? = nil, image: UIImage? = nil, url: NSURL? = nil) {
@@ -41,9 +41,9 @@ public struct Share {
     
     public struct Activity {
         public static func activityViewController(items: [AnyObject], activitys: [UIActivity]? = nil, excludedTypes: [String]? = nil) -> UIActivityViewController {
-            return UIActivityViewController(activityItems: items, applicationActivities: activitys).tweak {
-                $0.excludedActivityTypes = excludedTypes
-            }
+            let vc = UIActivityViewController(activityItems: items, applicationActivities: activitys)
+            vc.excludedActivityTypes = excludedTypes
+            return vc
         }
         
         public static func present(inViewController: UIViewController, items: [AnyObject], activitys: [UIActivity]? = nil, excludedTypes: [String]? = nil) {
