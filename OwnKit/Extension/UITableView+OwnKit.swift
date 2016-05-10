@@ -14,9 +14,13 @@ private extension AssociatedKeys {
 
 public extension UITableView {
     public var shouldCancelContentTouches: Bool {
-        get { return fetchAssociate(.shouldCancelContentTouchesKey, initialValue: false) }
-        set { storeAssociate(.shouldCancelContentTouchesKey, value: newValue) }
-    }    
+        get {
+            return AssociatedObjects.fetch(self, key: .shouldCancelContentTouchesKey, initialValue: false)
+        }
+        set {
+            AssociatedObjects.store(self, key: .shouldCancelContentTouchesKey, value: newValue)
+        }
+    }
     
     public override func touchesShouldCancelInContentView(view: UIView) -> Bool {
         return shouldCancelContentTouches ? true : super.touchesShouldCancelInContentView(view)

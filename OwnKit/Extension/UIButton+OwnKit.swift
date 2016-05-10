@@ -14,8 +14,12 @@ private extension AssociatedKeys {
 
 public extension UIButton {
     var hitAreaEdgeInsets: UIEdgeInsets {
-        get { return fetchAssociate(.hitAreaEdgeInsetsKey, initialValue: UIEdgeInsetsZero) }
-        set { storeAssociate(.hitAreaEdgeInsetsKey, value: newValue) }
+        get {
+            return AssociatedObjects.fetch(self, key: .hitAreaEdgeInsetsKey, initialValue: UIEdgeInsetsZero)
+        }
+        set {
+            AssociatedObjects.store(self, key: .hitAreaEdgeInsetsKey, value: newValue)
+        }
     }
     
     func setHitAreaEdgeInsets(top: CGFloat = 0, right: CGFloat = 0 , bottom: CGFloat = 0, left: CGFloat = 0) {

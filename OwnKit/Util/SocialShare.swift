@@ -25,7 +25,7 @@ public struct Share {
             return SLComposeViewController.isAvailableForServiceType(serviceType)
         }
         
-        public func composeViewController(text text: String? = nil, image: UIImage? = nil, url: NSURL? = nil) -> SLComposeViewController {
+        public func composeViewController(text text: String? = nil, image: UIImage? = nil, url: NSURL? = nil) -> SLComposeViewController {            
             return SLComposeViewController(forServiceType: serviceType).tweak { vc in
                 text.some { vc.setInitialText($0) }
                 image.some { vc.addImage($0) }
