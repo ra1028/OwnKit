@@ -28,12 +28,14 @@ public final class TransitionProxy: NSObject {
     
     public func setTransitionAnimator(animator: TransitionAnimator, destination: UIViewController) {
         animator.didEndTransition = { [weak self, weak destination] in
-            self?.removeTransitionAnimator()
-            if let `self` = self, vc = destination {
-                switch $0 {
-                case .Present:
+            switch $0 {
+            case .Present:
+                if let `self` = self, vc = destination {
                     self.delegate?.proxy(self, didPresentViewController: vc)
-                case .Dismiss:
+                }
+            case .Dismiss:
+                self?.removeTransitionAnimator()
+                if let `self` = self, vc = destination {
                     self.delegate?.proxy(self, didDismissViewController: vc)
                 }
             }
@@ -46,12 +48,14 @@ public final class TransitionProxy: NSObject {
     
     public func setTransitionAnimator(animator: TransitionAnimator, navigationController: UINavigationController) {
         animator.didEndTransition = { [weak self, weak navigationController] in
-            self?.removeTransitionAnimator()
-            if let `self` = self, vc = navigationController {
-                switch $0 {
-                case .Present:
+            switch $0 {
+            case .Present:
+                if let `self` = self, vc = navigationController {
                     self.delegate?.proxy(self, didPresentViewController: vc)
-                case .Dismiss:
+                }
+            case .Dismiss:
+                self?.removeTransitionAnimator()
+                if let `self` = self, vc = navigationController {
                     self.delegate?.proxy(self, didDismissViewController: vc)
                 }
             }
@@ -72,7 +76,7 @@ public final class TransitionProxy: NSObject {
 }
 
 extension TransitionProxy: UIViewControllerTransitioningDelegate {
-    public func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {        
+    public func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return animator?.tweak { $0.type = .Present }
     }
     
