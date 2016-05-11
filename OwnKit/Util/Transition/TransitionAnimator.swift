@@ -14,7 +14,7 @@ public class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning
         case Dismiss
     }
     
-    var willEndTransion: (() -> Void)?
+    var didEndTransition: (TransitionType -> Void)?
     
     public var duration: NSTimeInterval = 0.5
     public var type: TransitionType = .Present    
@@ -31,12 +31,15 @@ public class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning
         case .Present:
             animatePresentingTransition(transitionContext, from: fromViewController, to: toViewController)
         case .Dismiss:
-            willEndTransion?()
             animateDismissingTransition(transitionContext, from: fromViewController, to: toViewController)
         }
     }
     
     public func animatePresentingTransition(transitionContext: UIViewControllerContextTransitioning, from: UIViewController?, to: UIViewController?) {}
     
-    public func animateDismissingTransition(transitionContext: UIViewControllerContextTransitioning, from: UIViewController?, to: UIViewController?) {}    
+    public func animateDismissingTransition(transitionContext: UIViewControllerContextTransitioning, from: UIViewController?, to: UIViewController?) {}
+    
+    public func animationEnded(transitionCompleted: Bool) {
+        if transitionCompleted { didEndTransition?(type) }
+    }
 }
