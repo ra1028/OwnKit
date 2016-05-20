@@ -74,11 +74,11 @@ private final class AssociatedObject<T>: NSObject, NSCopying {
 }
 
 public enum AssociatedObjects {    
-    static func store<T>(to: AnyObject, key: AssociatedKey<T>, value: T) {
+    public static func store<T>(to: AnyObject, key: AssociatedKey<T>, value: T) {
         objc_setAssociatedObject(to, &key.keyValue, AssociatedObject(value), key.policy.value)
     }
     
-    static func fetch<T>(from: AnyObject, key: AssociatedKey<T>, @autoclosure initialValue: () -> T) -> T {
+    public static func fetch<T>(from: AnyObject, key: AssociatedKey<T>, @autoclosure initialValue: () -> T) -> T {
         if let object = objc_getAssociatedObject(from, &key.keyValue) as? AssociatedObject<T> {
             return object.value
         }
@@ -87,7 +87,7 @@ public enum AssociatedObjects {
         return initialValue
     }
     
-    static func fetch<T>(from: AnyObject, key: AssociatedKey<T>, initialValue: () -> T) -> T {
+    public static func fetch<T>(from: AnyObject, key: AssociatedKey<T>, initialValue: () -> T) -> T {
         if let object = objc_getAssociatedObject(from, &key.keyValue) as? AssociatedObject<T> {
             return object.value
         }
@@ -96,7 +96,7 @@ public enum AssociatedObjects {
         return initialValue
     }
     
-    static func clear(from: AnyObject) {
+    public static func clear(from: AnyObject) {
         objc_removeAssociatedObjects(from)
     }
 }
